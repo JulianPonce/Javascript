@@ -47,31 +47,55 @@ let pr3 = Number(prompt("ingrese valor de producto 3 "))
 let pr4 = Number(prompt("ingrese valor de producto 4 "))
 
 function iva(pr1, pr2, pr3, pr4) {
-    let pro1iva = pr1 * 1.2;
+    let pro1iva = pr1 * 1.2
     return pro1iva;
-    let pro2iva = pr2 * 1.2;
+    let pro2iva = pr2 * 1.2
     return pro2iva;
-    let pro3iva = pr3 * 1.2;
+    let pro3iva = pr3 * 1.2
     return pro3iva;
-    let pro4iva = pr4 * 1.2;
+    let pro4iva = pr4 * 1.2
     return pro4iva
 
-    function cuota(pr1, pr2, pr3, pr4) {
-        let cuota1 = (pr1 * 1.2) / 6;
-        return cuota1;
-        let cuota2 = (pr2 * 1.2) / 6;
-        return cuota2;
-        let cuota3 = (pr3 * 1.2) / 6;
-        return cuota3;
-        let cuota4 = (pr4 * 1.2) / 6;
-        return cuota4;
 
-
-    }
 
 }
 
-console.log("valor producto 1 + iva " + " " + iva(pr1));
+function cuota(pr1, pr2, pr3, pr4) {
+    let cuota1 = (pr1 * 1.2) / 6
+    return cuota1;
+    let cuota2 = (pr2 * 1.2) / 6
+    return cuota2;
+    let cuota3 = (pr3 * 1.2) / 6
+    return cuota3;
+    let cuota4 = (pr4 * 1.2) / 6
+    return cuota4;
+
+
+}
+
+function cuota2(pr1, pr2, p3, pr4) {
+    let cuota_1 = (pr1 * 1.2) / 12
+    return cuota_1;
+    let cuota_2 = (pr2 * 1.2) / 12
+    return cuota2;
+    let cuota_3 = (pr3 * 1.2) / 12
+    return cuota3;
+    let cuota_4 = (pr4 * 1.2) / 12
+    return cuota4;
+
+}
+
+console.log("Valor producto 1 + iva " + " " + iva(pr1));
 console.log("valor producto 2 + iva " + " " + iva(pr2));
-console.log("valor producto 3 + iva " + " " + iva(pr3));
+console.log("Valor producto 3 + iva " + " " + iva(pr3));
 console.log("valor producto 4 + iva " + " " + iva(pr4));
+
+console.log("Posible pago en 6 cuotas de " + " " + cuota(pr1));
+console.log("Posible pago en 6 cuotas de " + " " + cuota(pr2));
+console.log("Posible pago en 6 cuotas de " + " " + cuota(pr3));
+console.log("Posible pago en 6 cuotas de " + " " + cuota(pr4));
+
+console.log("Posible pago en 12 cuotas de " + " " + cuota2(pr1));
+console.log("Posible pago en 12 cuotas de " + " " + cuota2(pr2));
+console.log("Posible pago en 12 cuotas de " + " " + cuota2(pr3));
+console.log("Posible pago en 12 cuotas de " + " " + cuota2(pr4));
