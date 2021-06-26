@@ -12,18 +12,27 @@ suma(numero1, 30)*/
 
 
 
-/*
+
+
+
+
+
+
+
+
+
+
 
 
 let mat = Number(prompt("ingrese nota de matematicas"));
 let geo = Number(prompt("ingrese nota de geografia"));
 let fis = Number(prompt("ingrese nota de fisica"));
 let qui = Number(prompt("ingrese nota de quimica"));
-let pro = Number(prompt("ingrese cantidad de notas ingresadas"));
+let pro = Number(4);
 
-if (pro <= 0) {
-    alert("datos incorrectos verifique dividendo")
-    return Error
+if ((mat <= 0) || (geo <= 0) || (fis <= 0) || (qui <= 0)) {
+    alert("Datos incorrectos verifique las notas ingresadas")
+
 } else {
 
     function promedio(mat, geo, fis, qui, pro) {
@@ -35,12 +44,62 @@ if (pro <= 0) {
     }
 
 }
-alert("Su promedio es " + " " + promedio(mat, geo, fis, qui, pro));
-
-console.log("Su promedio es " + " " + promedio(mat, geo, fis, qui, pro));*/
 
 
+if ((promedio(mat, geo, fis, qui, pro)) >= 6) {
+    switch (mat, geo, fis, qui, pro) {
+        case (mat < 6):
+            alert("desaprobaste matematicas");
+            break;
+        case (geo < 6):
+            alert("desaprobaste geografia");
+            break;
+        case (fis < 6):
+            alert("desaprobaste fisica");
+            break;
+        case (qui < 6):
+            alert("desaprobaste quimica");
+    }
+    alert("Tu promedio es" + " " + (promedio(mat, geo, fis, qui, pro) + " " + ",felicidades aprobaste la cursada"))
 
+} else {
+    switch (mat, geo, fis, qui, pro) {
+        case (mat < 6):
+            alert("desaprobaste matematicas");
+            break;
+        case (geo < 6):
+            alert("desaprobaste geografia");
+            break;
+        case (fis < 6):
+            alert("desaprobaste fisica");
+            break;
+        case (qui < 6):
+            alert("desaprobaste quimica");
+
+    }
+    alert("Tu promedio es" + " " + (promedio(mat, geo, fis, qui, pro) + " " + ", no es suficiente para aprobar la cursada"))
+
+}
+if ((mat >= 6) && (geo >= 6) && (fis >= 6) && (qui >= 6)) {
+    alert("Felicidades aprobaste todas las materias")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 let pr1 = Number(prompt("ingrese valor de producto 1 "))
 let pr2 = Number(prompt("ingrese valor de producto 2 "))
 let pr3 = Number(prompt("ingrese valor de producto 3 "))
@@ -98,4 +157,4 @@ console.log("Posible pago en 6 cuotas de " + " " + cuota(pr4));
 console.log("Posible pago en 12 cuotas de " + " " + cuota2(pr1));
 console.log("Posible pago en 12 cuotas de " + " " + cuota2(pr2));
 console.log("Posible pago en 12 cuotas de " + " " + cuota2(pr3));
-console.log("Posible pago en 12 cuotas de " + " " + cuota2(pr4));
+console.log("Posible pago en 12 cuotas de " + " " + cuota2(pr4));*/
