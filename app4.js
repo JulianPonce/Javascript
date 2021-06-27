@@ -30,7 +30,7 @@ let fis = Number(prompt("ingrese nota de fisica"));
 let qui = Number(prompt("ingrese nota de quimica"));
 let pro = Number(4);
 
-if ((mat <= 0) || (geo <= 0) || (fis <= 0) || (qui <= 0)) {
+if ((mat <= 0) || (mat > 10) || (geo <= 0) || (geo > 10) || (fis <= 0) || (fis > 10) || (qui <= 0) || (qui > 10)) {
     alert("Datos incorrectos verifique las notas ingresadas")
 
 } else {
@@ -59,6 +59,7 @@ if ((promedio(mat, geo, fis, qui, pro)) >= 6) {
             break;
         case (qui < 6):
             alert("desaprobaste quimica");
+            break;
     }
     alert("Tu promedio es" + " " + (promedio(mat, geo, fis, qui, pro) + " " + ",felicidades aprobaste la cursada"))
 
