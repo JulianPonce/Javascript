@@ -64,20 +64,7 @@ if ((promedio(mat, geo, fis, qui, pro)) >= 6) {
     alert("Tu promedio es" + " " + (promedio(mat, geo, fis, qui, pro) + " " + ",felicidades aprobaste la cursada"))
 
 } else {
-    switch (mat, geo, fis, qui, pro) {
-        case (mat < 6):
-            alert("desaprobaste matematicas");
-            break;
-        case (geo < 6):
-            alert("desaprobaste geografia");
-            break;
-        case (fis < 6):
-            alert("desaprobaste fisica");
-            break;
-        case (qui < 6):
-            alert("desaprobaste quimica");
 
-    }
     alert("Tu promedio es" + " " + (promedio(mat, geo, fis, qui, pro) + " " + ", no es suficiente para aprobar la cursada"))
 
 }
