@@ -47,20 +47,7 @@ if ((mat <= 0) || (mat > 10) || (geo <= 0) || (geo > 10) || (fis <= 0) || (fis >
 
 
 if ((promedio(mat, geo, fis, qui, pro)) >= 6) {
-    switch (mat, geo, fis, qui, pro) {
-        case (mat < 6):
-            alert("desaprobaste matematicas");
-            break;
-        case (geo < 6):
-            alert("desaprobaste geografia");
-            break;
-        case (fis < 6):
-            alert("desaprobaste fisica");
-            break;
-        case (qui < 6):
-            alert("desaprobaste quimica");
-            break;
-    }
+
     alert("Tu promedio es" + " " + (promedio(mat, geo, fis, qui, pro) + " " + ",felicidades aprobaste la cursada"))
 
 } else {
@@ -70,8 +57,25 @@ if ((promedio(mat, geo, fis, qui, pro)) >= 6) {
 }
 if ((mat >= 6) && (geo >= 6) && (fis >= 6) && (qui >= 6)) {
     alert("Felicidades aprobaste todas las materias")
-}
+} else {
+    function apro(mat, geo, fis, qui) {
 
+        switch (apro()) {
+            case (mat < 6):
+                alert("desaprobaste matematicas");
+                break;
+            case (geo < 6):
+                alert("desaprobaste geografia");
+                break;
+            case (fis < 6):
+                alert("desaprobaste fisica");
+                break;
+            case (qui < 6):
+                alert("desaprobaste quimica");
+                break;
+        }
+    }
+}
 
 
 
