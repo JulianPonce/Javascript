@@ -8,14 +8,32 @@ class Microfonos {
     }
     comprar() {
         if (this.stock > 0) {
+            if (this.stock === 2) {
+                console.log(`Te quedan solo 2 productos de ${this.nombre}`)
+                if (this.stock === 1) {
+                    let pedido = confirm(`te queda un prodcuto de ${this.nombre} desea pedir 5 mas ?`);
+                    if (pedido == true) {
+                        this.stock = this.stock + 5;
+                        console.log("Se pidieron 5 productos al proovedor");
+                    }
+                }
+
+            }
             console.log(`usted compro ${this.nombre} y quedad ${this.stock} en stock `);
             this.stock = this.stock - 1;
+
+
         } else {
             this.disponible = false;
-            let error = `no hay mas stock de  ${this.nombre}`;
-            console.log(error);
+            let error = `no quedan mas productos de ${this.nombre}`
+            alert(error)
+
         }
+
+
     }
+
+
 }
 
 const AKG = new Microfonos("akg 414", 30000, true, "Akg", 5);
