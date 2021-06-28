@@ -9,7 +9,7 @@ class Microfonos {
     comprar() {
         if (this.stock > 0) {
             this.stock = this.stock - 1;
-            console.log(`usted compro ${this.nombre} y quedad ${this.stock} en stock `);
+            console.log(`usted compro ${this.nombre} te quedan ${this.stock} en stock `);
 
             if (this.stock === 1) {
                 let pedido = confirm(`te queda un prodcuto de ${this.nombre} desea pedir 5 mas ?`);
