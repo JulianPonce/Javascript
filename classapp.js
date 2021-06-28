@@ -1,4 +1,4 @@
-/*class Microfonos {
+class Microfonos {
     constructor(nombre, precio, disponible, marca, stock) {
         this.nombre = nombre;
         this.precio = precio;
@@ -8,21 +8,18 @@
     }
     comprar() {
         if (this.stock > 0) {
-            if (this.stock === 2) {
-                console.log(`Te quedan solo 2 productos de ${this.nombre}`)
-                if (this.stock === 1) {
-                    let pedido = confirm(`te queda un prodcuto de ${this.nombre} desea pedir 5 mas ?`);
-                    if (pedido == true) {
-                        this.stock = this.stock + 5;
-                        console.log("Se pidieron 5 productos al proovedor");
-                    }
+            this.stock = this.stock - 1;
+            console.log(`usted compro ${this.nombre} y quedad ${this.stock} en stock `);
+
+            if (this.stock === 1) {
+                let pedido = confirm(`te queda un prodcuto de ${this.nombre} desea pedir 5 mas ?`);
+                if (pedido == true) {
+                    this.stock = this.stock + 5;
+                    console.log("Se pidieron 5 productos al proovedor");
+
                 }
 
             }
-            console.log(`usted compro ${this.nombre} y quedad ${this.stock} en stock `);
-            this.stock = this.stock - 1;
-
-
         } else {
             this.disponible = false;
             let error = `no quedan mas productos de ${this.nombre}`
@@ -51,9 +48,21 @@ AKG.comprar();
 AKG.comprar();
 AKG.comprar();
 AKG.comprar();
-AKG.comprar();*/
+AKG.comprar();
 
-let nickname = prompt("Ingrese nombre de tu personaje")
+
+SENH.comprar();
+SENH.comprar();
+SENH.comprar();
+SENH.comprar();
+SENH.comprar();
+
+b52.comprar();
+b52.comprar();
+b52.comprar();
+b52.comprar();
+
+/*let nickname = prompt("Ingrese nombre de tu personaje")
 let altura = Number(prompt("ingrese la altura del personaje"))
 let poderes = prompt("Ingrese que poder posee tu personaje")
 let arma = prompt("Ingrese el arma con el que desea pelear")
@@ -86,4 +95,4 @@ if (crear === false) {
 const per1 = new personaje(nickname, altura, poderes, arma);
 console.log(per1);
 const per2 = new personaje(nickname, altura, poderes, arma);
-console.log(per2);
+console.log(per2);*/
