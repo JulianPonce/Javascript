@@ -53,28 +53,27 @@ if ((promedio(mat, geo, fis, qui, pro)) >= 6) {
 } else {
 
 
-    switch (true) {
-        case mat < 6:
-            alert("desaprobaste matematicas");
-
-        case (geo < 6):
-            alert("desaprobaste geografia");
-
-        case (fis < 6):
-            alert("desaprobaste fisica");
-
-        case (qui < 6):
-            alert("desaprobaste quimica");
-            break;
-        default:
-            alert("desaprobaste todas las materias");
-            break;
-
-
+    while (mat < 6) {
+        alert("desaprobaste matematicas");
+        break;
     }
-    alert("Tu promedio es" + " " + (promedio(mat, geo, fis, qui, pro) + " " + ", no es suficiente para aprobar la cursada"))
+    while (geo < 6) {
+        alert("desaprobaste geografia");
+        break;
+    }
+    while (fis < 6) {
+        alert("desaprobaste fisica");
+        break;
+    }
+    while (qui < 6) {
+        alert("desaprobaste quimica");
+        break;
+    }
 
+
+    alert("Tu promedio es" + " " + (promedio(mat, geo, fis, qui, pro) + " " + ", no es suficiente para aprobar la cursada"))
 }
+
 
 
 
