@@ -41,7 +41,7 @@ listapersonajes2.push(per7)
 listapersonajes2.push(per8)
 listapersonajes2.push(per9)
 
-console.log(listapersonajes);
+console.log(listapersonajes); //DESAFIO 1 ARRAY CON OBJETOS
 
 let listaporsquad = listapersonajes2.sort((a, b) => {
     if (a.squad > b.squad) {
@@ -56,7 +56,7 @@ let listaporsquad = listapersonajes2.sort((a, b) => {
 });
 
 
-console.log(listaporsquad);
+console.log(listaporsquad); //DESAFIO COMPLEMENTARIO  ARRAY CON OBJETOS ORDENADOS EN ESTE CASO POR SQUAD
 
 
 console.log(listapersonajes.filter(Personajes => Personajes.categoria == "guerrero"));
