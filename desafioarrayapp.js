@@ -29,10 +29,21 @@ listapersonajes.push(per7)
 listapersonajes.push(per8)
 listapersonajes.push(per9)
 
+let listapersonajes2 = []
+
+listapersonajes2.push(per1)
+listapersonajes2.push(per2)
+listapersonajes2.push(per3)
+listapersonajes2.push(per4)
+listapersonajes2.push(per5)
+listapersonajes2.push(per6)
+listapersonajes2.push(per7)
+listapersonajes2.push(per8)
+listapersonajes2.push(per9)
 
 console.log(listapersonajes);
 
-let listaporsquad = listapersonajes.sort((a, b) => {
+let listaporsquad = listapersonajes2.sort((a, b) => {
     if (a.squad > b.squad) {
         return 1;
     }
