@@ -1,4 +1,4 @@
-let n = Number(prompt("ingrese su numero del 1 al 10"))
+/*let n = Number(prompt("ingrese su numero del 1 al 10"))
 
 while ((n > 10) || (n === 0)) {
     alert("El numero ingresado es incorrecto");
@@ -76,4 +76,4 @@ if ((n > 0) && (n < 10)) {
 
     }
 
-}
+}*/

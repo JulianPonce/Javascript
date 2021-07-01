@@ -1,4 +1,4 @@
-class Microfonos {
+/*class Microfonos {
     constructor(nombre, precio, disponible, marca, stock) {
         this.nombre = nombre;
         this.precio = precio;
@@ -60,12 +60,13 @@ SENH.comprar();
 b52.comprar();
 b52.comprar();
 b52.comprar();
-b52.comprar();
+b52.comprar();*/
 
-/*let nickname = prompt("Ingrese nombre de tu personaje")
+let nickname = prompt("Ingrese nombre de tu personaje")
 let altura = Number(prompt("ingrese la altura del personaje"))
 let poderes = prompt("Ingrese que poder posee tu personaje")
 let arma = prompt("Ingrese el arma con el que desea pelear")
+
 
 
 
@@ -80,14 +81,21 @@ class personaje {
     }
 }
 
-let crear = confirm("desea crear otro personsaje ??")
 
-if (crear === false) {
-    alert("Disfruta la partida");
 
+let crear = confirm("desea crear otro personsaje ??");
+if (crear) {
+    const per2 = new personaje(
+        prompt('nickname'),
+        prompt('altura'),
+        prompt('poderes'),
+        prompt('arma')
+    );
+    console.log(per2);
 } else {
-
+    alert("Disfruta la partida");
 }
+
 
 
 
@@ -95,4 +103,4 @@ if (crear === false) {
 const per1 = new personaje(nickname, altura, poderes, arma);
 console.log(per1);
 const per2 = new personaje(nickname, altura, poderes, arma);
-console.log(per2);*/
+console.log(per2);

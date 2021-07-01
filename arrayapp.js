@@ -100,5 +100,4 @@ for (const propiedades of Microfonos) {
 }
 
 
-Microfonos.forEach(e => { console.log(e.nombre) })
-Microfonos.forEach(l => { console.log(l.precio) })
+Microfonos.forEach(e => { console.log(e.nombre, e.precio) })
