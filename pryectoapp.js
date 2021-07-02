@@ -51,7 +51,9 @@ const pro10 = new Productos("cl5", 10000000, "consolas", 1, "yamaha", true);
 const pro11 = new Productos("sd7", 10000000, "consolas", 1, "digico", true);
 const pro12 = new Productos("s6l", 10000000, "consolas", 1, "venue", true);
 
-let productostotal = []
+let productostotal = [];
+
+
 
 productostotal.push(pro1)
 productostotal.push(pro2)
@@ -69,7 +71,26 @@ productostotal.push(pro12)
 
 console.log(productostotal);
 
-let listapormenorprecio = productostotal.sort((a, b) => {
+
+
+let listaOrdenada = []
+
+listaOrdenada.push(pro1)
+listaOrdenada.push(pro2)
+listaOrdenada.push(pro3)
+listaOrdenada.push(pro4)
+listaOrdenada.push(pro5)
+listaOrdenada.push(pro6)
+listaOrdenada.push(pro7)
+listaOrdenada.push(pro8)
+listaOrdenada.push(pro9)
+listaOrdenada.push(pro10)
+listaOrdenada.push(pro11)
+listaOrdenada.push(pro12)
+
+
+
+let listamenorprecio = listaOrdenada.sort((a, b) => {
     if (a.precio > b.precio) {
         return 1;
     }
@@ -80,7 +101,20 @@ let listapormenorprecio = productostotal.sort((a, b) => {
     return 0
 
 });
-console.log(listapormenorprecio);
+
+let listamayorprecio = listaOrdenada.sort((a, b) => {
+    if (a.precio > b.precio) {
+        return -1;
+    }
+    if (a.precio < b.precio) {
+        return 1;
+
+    }
+    return 0
+
+});
+console.log(listamenorprecio);
+console.log(listamayorprecio);
 
 
 console.log(productostotal.filter(Productos => Productos.categoria == "microfonos"));
@@ -88,10 +122,3 @@ console.log(productostotal.filter(Productos => Productos.categoria == "microfono
 console.log(productostotal.filter(Productos => Productos.categoria == "consolas"));
 
 console.log(productostotal.filter(Productos => Productos.categoria == "auriculares"));
-
-
-
-pro1.comprar();
-pro1.comprar();
-pro4.comprar();
-pro8.comprar();
