@@ -1,0 +1,284 @@
+
+
+body{
+background-color:black;
+
+}
+
+
+.banner{
+    height:600px;
+	background-image: url(../img/banner1.jpg);
+    background-position:bottom;
+    background-size: cover;
+    border-bottom: solid 5px;
+    border-color:#A5C5C5; 
+    }
+
+
+
+
+.menu a{
+  font-family: helvetica;
+  font-size: 18px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  color: #A5C5C5;
+ 
+
+}
+
+
+.menu a:hover{
+  
+  color: white;
+}
+
+
+
+
+.navbar{
+	border-bottom:solid 5px;
+	border-color: black;
+}
+
+
+.navbar img{
+
+	margin-left: 30px;
+	border:solid 5px;
+	border-color: black;
+}
+
+.navitem1{
+          
+          border-left: solid 5px;
+          border-color: black;
+
+}
+
+.titulomain{
+	color:#D5D38B; 
+	padding-top:100px;
+	padding-bottom: 40px;
+	text-align: center;
+	letter-spacing: 30px;
+	font-size: 40px;
+}
+
+section .cuerpo{
+	padding-top: 80px;
+	margin:auto;
+
+}
+
+.main .card{
+	margin-top: 30px,
+}
+
+
+
+
+
+.main{
+	margin-top: 120px;
+	align-items: center;
+}
+
+ .cuerpo{
+ 	margin-top: 60px;
+ }
+
+section.carousel{
+    padding-top: 100px;
+	max-width:500px; 
+    align-items: center;
+    margin:auto;
+}
+
+.cuerpo a {
+	font-family: century gothic;
+	letter-spacing: 8px;
+	font-size: 20px;
+	color: #A5C5C5;
+     text-shadow: 5px 5px black;
+}
+.cuerpo a:hover{
+	color: transparent;
+	text-shadow: -5px -5px #A5C5C5;
+}
+}
+
+footer {
+	margin-top: 150px;
+}
+
+.nosotros{
+    text-align: center;
+    font-family: arial;
+	font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menuconsolas{
+    height: 450px;
+	background-image: url(../img/bannerconsola.jpg);
+    background-position: all;
+    background-size:cover;
+    border-bottom: solid 5px;
+    border-color:#A5C5C5; 
+}
+
+
+.titulocons{
+	color:#D5D38B; 
+	padding-top: 40px;
+	text-align: center;
+	letter-spacing: 30px;
+	font-size: 40px;
+}
+
+.mainseccion div {
+	background: radial-gradient(circle, black 0%, rgba(54,55,107,1) 100%);
+    margin-top:30px; 
+    margin-bottom:30px;
+}
+
+.mainseccion strong{
+	color: white;
+	font-size: 20px;
+	letter-spacing: 8px;
+
+}
+
+
+.mainseccion p{
+    color: white;
+    
+    letter-spacing: 5px;
+    word-spacing: 5px;
+	font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menumic {
+    height: 426px;
+	background-image: url(../img/micbanner.jpg);
+    background-position: all;
+    background-size:all;
+    border-bottom: solid 5px;
+    border-color:#A5C5C5; 
+}
+
+
+
+
+.h1mic{
+	
+	color:#D5D38B; 
+	padding-top: 40px;
+	text-align: center;
+	letter-spacing: 30px;
+	font-size: 40px;
+}
+
+
+
+
+
+
+.secauris{
+    height: 450px;
+	background-image: url(../img/aurisbanner.webp);
+    background-position: center;
+    background-size:cover;
+    border-bottom: solid 5px;
+    border-color:#A5C5C5; 
+}
+
+
+.h1auris{
+	color:#D5D38B; 
+	margin-top: 30px;
+	text-align: center;
+	letter-spacing: 30px;
+	font-size: 40px;
+}
+
+.container{
+	border:solid 3px;
+	border-color: white;
+}
+
+
+.iniciofinal button a{
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+
+.iniciofinal button {
+	
+   text-decoration: none;
+   background: linear-gradient(180deg, gray 0%, #A5C5C5 100%);
+    transition: all .3s;
+}
+
+
+.iniciofinal button:hover{
+
+	background: linear-gradient(180deg, gray 0%, black 100%);
+    transition: all .3s;
+}
+
+
+
+
+
+
+.bodycontac{
+	margin: 0;
+	padding-top: 200px;
+}
+
+
+.h2con{
+
+color: white;
+}
+
+.form{
+	margin: 0;
+	padding-top: 100px;
+}
+
+
+h3{
+	color: white;
+}
