@@ -62,7 +62,7 @@ const pro10 = new Productos(9, "cl5", 10000000, "consolas", 1, "yamaha", true);
 const pro11 = new Productos(10, "sd7", 10000000, "consolas", 1, "digico", true);
 const pro12 = new Productos(11, "s6l", 10000000, "consolas", 1, "venue", true);
 
-let productostotal = [];
+const productostotal = [];
 
 
 
@@ -82,7 +82,8 @@ productostotal.push(pro12)
 
 console.log(productostotal);
 
-
+let ajson = JSON.stringify(productostotal)
+localStorage.setItem("productos", ajson)
 
 let listaOrdenada = []
 
