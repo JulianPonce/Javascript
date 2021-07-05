@@ -142,3 +142,9 @@ console.log(productostotal.filter(Productos => Productos.categoria == "auricular
 
 
 listadecarro = []
+
+
+pro1.comprar()
+pro1.comprar()
+pro1.comprar()
+pro1.comprar()
