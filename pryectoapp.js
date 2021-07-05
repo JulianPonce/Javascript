@@ -9,22 +9,15 @@ class Productos {
 
     }
 
-    suma() {
-        if (comprar(this.Productos) == true) {
-            let total = []
 
 
-        } else {
-
-        }
-    }
 
 
 
 
 
     comprar() {
-        if (this.stock > 0) {
+        if ((this.stock > 0) && (confirm = true)) {
             this.stock = this.stock - 1;
             console.log(`se compro un ${this.modelo} te quedan ${this.stock} en stock `);
             alert(`Gracias por comprar un ${this.modelo} al precio de ${this.precio} `)
@@ -46,6 +39,7 @@ class Productos {
 
 
     }
+
 
 
 }
@@ -141,16 +135,18 @@ console.log(productostotal.filter(Productos => Productos.categoria == "auricular
 
 
 
-listadecarro = []
+confirm = alert("desea comprar un microfono?,rev20,sen945,akg414 o shure7mb")
+let micro = prompt("ingrese el nombre del microfono");
 
-
-pro1.comprar()
-pro1.comprar()
-pro1.comprar()
-pro1.comprar()
-
-
-pro2.comprar()
-pro3.comprar()
-
-pro4.comprar()
+if (micro == "rev20") {
+    pro1.comprar()
+}
+if (micro == "sen945") {
+    pro2.comprar()
+}
+if (micro == "akg414") {
+    pro3.comprar()
+}
+if (micro == "shure7mb") {
+    pro4.comprar()
+}
