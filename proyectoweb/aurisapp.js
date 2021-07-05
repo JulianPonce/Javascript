@@ -4,4 +4,5 @@ const productostotal = JSON.parse(deJson)
 
 console.log(productostotal);
 
-console.log(productostotal.filter(Productos => Productos.categoria == "auriculares"));
+let auriculares = productostotal.filter(Productos => Productos.categoria == "auriculares");
+console.log(auriculares);
