@@ -138,15 +138,18 @@ console.log(productostotal.filter(Productos => Productos.categoria == "auricular
 confirm = alert("desea comprar un microfono?,rev20,sen945,akg414 o shure7mb")
 let micro = prompt("ingrese el nombre del microfono");
 
-if (micro == "rev20") {
+if (micro.toLowerCase() == "rev20") {
     pro1.comprar()
 }
-if (micro == "sen945") {
+if (micro.toLowerCase() == "sen945") {
     pro2.comprar()
 }
-if (micro == "akg414") {
+if (micro.toLowerCase() == "akg414") {
     pro3.comprar()
 }
-if (micro == "shure7mb") {
+if (micro.toLowerCase() == "shure7mb") {
     pro4.comprar()
+}
+if ((micro.toLowerCase() != "rev20") && (micro.toLowerCase() != "sen945") && (micro.toLowerCase() != "akg414") && (micro.toLowerCase() != "shure7mb")) {
+    alert("Nombre ingresado es incorrecto")
 }
