@@ -1,12 +1,28 @@
 class Productos {
-    constructor(modelo, precio, categoria, stock, marca, disponible) {
+    constructor(modelo, precio, categoria, stock, marca, disponible, total) {
         this.modelo = modelo;
         this.precio = precio;
         this.categoria = categoria;
         this.stock = stock;
         this.marca = marca;
-        this.disponible = disponible
+        this.disponible = disponible;
+
     }
+
+    suma() {
+        if (comprar(this.Productos) == true) {
+            let total = []
+
+
+        } else {
+
+        }
+    }
+
+
+
+
+
     comprar() {
         if (this.stock > 0) {
             this.stock = this.stock - 1;
@@ -122,3 +138,7 @@ console.log(productostotal.filter(Productos => Productos.categoria == "microfono
 console.log(productostotal.filter(Productos => Productos.categoria == "consolas"));
 
 console.log(productostotal.filter(Productos => Productos.categoria == "auriculares"));
+
+
+
+listadecarro = []
