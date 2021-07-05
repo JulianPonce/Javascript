@@ -148,3 +148,9 @@ pro1.comprar()
 pro1.comprar()
 pro1.comprar()
 pro1.comprar()
+
+
+pro2.comprar()
+pro3.comprar()
+
+pro4.comprar()
