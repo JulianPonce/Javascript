@@ -1,5 +1,6 @@
 class Productos {
-    constructor(modelo, precio, categoria, stock, marca, disponible, total) {
+    constructor(id, modelo, precio, categoria, stock, marca, disponible) {
+        this.id = id;
         this.modelo = modelo;
         this.precio = precio;
         this.categoria = categoria;
@@ -48,18 +49,18 @@ class Productos {
 
 
 //nombre, precio, categoria,stock,marca,disponible
-const pro1 = new Productos("rev20", 80000, "microfonos", 4, "electro voice", true);
-const pro2 = new Productos("S945", 30000, "microfonos", 5, "sennheiser", true);
-const pro3 = new Productos("akg414", 90000, "microfonos", 3, "akg", true);
-const pro4 = new Productos("Shure7mb", 70000, "microfonos", 3, "shure", true);
-const pro5 = new Productos("ATM50", 40000, "auriculares", 5, "audio tecnica", true);
-const pro6 = new Productos("Focal spirit", 50000, "auriculares", 5, "Focal", true);
-const pro7 = new Productos("mdr 7005", 30000, "auriculares", 2, "Sony", true);
-const pro8 = new Productos("HD 25", 32000, "auriculares", 2, "sennheiser", true);
-const pro9 = new Productos("S7000", 10000000, "consolas", 1, "allenandheath", true);
-const pro10 = new Productos("cl5", 10000000, "consolas", 1, "yamaha", true);
-const pro11 = new Productos("sd7", 10000000, "consolas", 1, "digico", true);
-const pro12 = new Productos("s6l", 10000000, "consolas", 1, "venue", true);
+const pro1 = new Productos(0, "rev20", 80000, "microfonos", 4, "electro voice", true);
+const pro2 = new Productos(1, "S945", 30000, "microfonos", 5, "sennheiser", true);
+const pro3 = new Productos(2, "akg414", 90000, "microfonos", 3, "akg", true);
+const pro4 = new Productos(3, "Shure7mb", 70000, "microfonos", 3, "shure", true);
+const pro5 = new Productos(4, "ATM50", 40000, "auriculares", 5, "audio tecnica", true);
+const pro6 = new Productos(5, "Focal spirit", 50000, "auriculares", 5, "Focal", true);
+const pro7 = new Productos(6, "mdr 7005", 30000, "auriculares", 2, "Sony", true);
+const pro8 = new Productos(7, "HD 25", 32000, "auriculares", 2, "sennheiser", true);
+const pro9 = new Productos(8, "S7000", 10000000, "consolas", 1, "allenandheath", true);
+const pro10 = new Productos(9, "cl5", 10000000, "consolas", 1, "yamaha", true);
+const pro11 = new Productos(10, "sd7", 10000000, "consolas", 1, "digico", true);
+const pro12 = new Productos(11, "s6l", 10000000, "consolas", 1, "venue", true);
 
 let productostotal = [];
 
@@ -136,6 +137,7 @@ console.log(productostotal.filter(Productos => Productos.categoria == "auricular
 
 
 confirm = alert("desea comprar un microfono?,rev20,sen945,akg414 o shure7mb")
+
 let micro = prompt("ingrese el nombre del microfono");
 
 if (micro.toLowerCase() == "rev20") {
