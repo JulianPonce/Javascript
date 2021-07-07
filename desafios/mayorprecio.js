@@ -23,7 +23,7 @@ let listamayorprecio = productos.sort((a, b) => {
 
 function imprimirmayor() {
 
-    let idImprimir = document.getElementById("cardsmayore")
+    let idImprimir = document.getElementById("cardsmayor")
 
     listamayorprecio.forEach(e => {
         idImprimir.innerHTML += `
@@ -35,6 +35,7 @@ function imprimirmayor() {
                 <li class="list-group-item">${e.categoria}</li>
                 <li class="list-group-item">${e.marca}</li>
                 <li class="list-group-item">${e.precio}</li>
+                <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
             </ul>
         
             </div>

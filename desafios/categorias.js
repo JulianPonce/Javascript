@@ -1,6 +1,7 @@
 let dejson = localStorage.getItem("productostotal")
 const productos = JSON.parse(dejson)
 let cat = prompt("ingrese la categoria que desea ver remera, botines, zapatillas o pantalon")
+
 let cattest = []
 
 function categoriasfilter() {
@@ -30,6 +31,7 @@ function imprimircat() {
                 <li class="list-group-item">${e.categoria}</li>
                 <li class="list-group-item">${e.marca}</li>
                 <li class="list-group-item">${e.precio}</li>
+                <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
             </ul>
         
             </div>
