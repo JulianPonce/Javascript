@@ -1,8 +1,14 @@
 let dejson = localStorage.getItem("productostotal")
 const productos = JSON.parse(dejson)
-let cat = prompt("ingrese la categoria que desea ver remera, botines, zapatillas o pantalon")
+let cat = prompt("ingrese la genero de musica.(jazz,rock,rock prog o blues)")
 
 let cattest = []
+const body = document.body
+
+
+
+
+
 
 function categoriasfilter() {
 
@@ -13,6 +19,7 @@ function categoriasfilter() {
 }
 
 categoriasfilter()
+
 
 
 
@@ -41,4 +48,16 @@ function imprimircat() {
 }
 
 
-imprimircat()
+
+function estilo() {
+    if ("jazz" == true) {
+        body.setAttribute("style", "background-color = #E04422")
+
+    } else if (cat === "blues") {
+        body.setAttribute("style", "background-color = #E09445")
+    }
+
+}
+
+imprimircat();
+estilo()
