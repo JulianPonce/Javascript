@@ -73,7 +73,7 @@ function imprimir() {
 
     productos.forEach(e => {
         idImprimir.innerHTML += `
-        <div class="card" style="width: 15rem;">
+        <div class="card" style="width: 15rem;margin:20px;">
         <img src="${e.img}" class="card-img-top" alt="...">
         <div class="card" style="width: 15rem;">
             
@@ -90,5 +90,11 @@ function imprimir() {
 
 }
 
+function estilo() {
 
+    body.setAttribute("style", "background-color : gray")
+
+}
 imprimir()
+
+estilo()

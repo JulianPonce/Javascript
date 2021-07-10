@@ -30,8 +30,8 @@ function imprimircat() {
 
     cattest.forEach(e => {
         idImprimir.innerHTML += `
-        <div class="card" style="width: 15rem;">
-        <img src="${e.img}" class="card-img-top" alt="...">
+        <div class="card" id ="cartas" style="width: 15rem;margin:20px;">
+        <img src="${e.img}" class="card-img-top"style="width: auto;" alt="...">
         <div class="card" style="width: 15rem;">
             
             <ul class="list-group list-group-flush">
@@ -50,14 +50,30 @@ function imprimircat() {
 
 
 function estilo() {
-    if ("jazz" == true) {
-        body.setAttribute("style", "background-color = #E04422")
+    if (cat === "jazz") {
+        body.setAttribute("style", "background-color : #E04422")
 
     } else if (cat === "blues") {
-        body.setAttribute("style", "background-color = #E09445")
+        body.setAttribute("style", "background-color : #E09445")
+    } else if (cat === "rock prog") {
+        body.setAttribute("style", "background-color : red")
+    } else if (cat === "rock") {
+        body.setAttribute("style", "background-color : gray")
+    }
+    let cards = document.getElementsByClassName("card")
+    console.log(cards);
+    for (const card of cards) {
+        card.setAttribute("style", "background-color : black;")
     }
 
 }
+
+
+
+
+
+
+
 
 imprimircat();
 estilo()

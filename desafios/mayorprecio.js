@@ -2,7 +2,7 @@ let dejson = localStorage.getItem("productostotal")
 const productos = JSON.parse(dejson)
 
 let cattest = []
-
+const body = document.body
 
 
 
@@ -27,7 +27,7 @@ function imprimirmayor() {
 
     listamayorprecio.forEach(e => {
         idImprimir.innerHTML += `
-        <div class="card" style="width: 15rem;">
+        <div class="card" style="width: 15rem;margin:20px;">
         <img src="${e.img}" class="card-img-top" alt="...">
         <div class="card" style="width: 15rem;">
             
@@ -46,5 +46,11 @@ function imprimirmayor() {
 
 console.log(listamayorprecio);
 
+function estilo() {
 
+    body.setAttribute("style", "background-color : gray")
+
+}
+
+estilo()
 imprimirmayor()

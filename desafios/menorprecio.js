@@ -1,7 +1,7 @@
 let dejson = localStorage.getItem("productostotal")
 const productos = JSON.parse(dejson)
 
-
+const body = document.body
 
 
 let listamenorprecio = productos.sort((a, b) => {
@@ -25,7 +25,7 @@ function imprimirmenor() {
 
     listamenorprecio.forEach(e => {
         idImprimir.innerHTML += `
-        <div class="card" style="width: 15rem;">
+        <div class="card" style="width: 15rem;margin:20px;">
         <img src="${e.img}" class="card-img-top" alt="...">
         <div class="card" style="width: 15rem;">
             
@@ -41,5 +41,17 @@ function imprimirmenor() {
     })
 
 }
+
+function estilo() {
+
+    body.setAttribute("style", "background-color : gray")
+    let cards = document.getElementsByClassName("cards")
+    console.log(cards);
+    for (const card of cards) {
+        card.setAttribute("style", "background-color : black;margin:20px;zise:13px")
+    }
+}
+
+estilo()
 
 imprimirmenor()
