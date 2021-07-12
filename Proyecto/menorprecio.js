@@ -1,35 +1,33 @@
 let dejson = localStorage.getItem("productostotal")
 const productos = JSON.parse(dejson)
 
-let cattest = []
 const body = document.body
 
 
-
-
-let listamayorprecio = productos.sort((a, b) => {
+let listamenorprecio = productos.sort((a, b) => {
     if (a.precio > b.precio) {
-        return -1;
+        return 1;
     }
     if (a.precio < b.precio) {
-        return 1;
+        return -1;
 
     }
     return 0
 
 });
 
+console.log(listamenorprecio);
 
 
-function imprimirmayor() {
+function imprimirmenor() {
 
-    let idImprimir = document.getElementById("cardsmayor")
+    let idImprimir = document.getElementById("cardsmenor")
 
-    listamayorprecio.forEach(e => {
+    listamenorprecio.forEach(e => {
         idImprimir.innerHTML += `
-        <div class="card" style="width: 15rem;margin:20px;">
+        <div class="card" style="width: 20rem;margin:1rem">
         <img src="${e.img}" class="card-img-top" alt="...">
-        <div class="card" style="width: 15rem;">
+        <div class="cards" style="width: 18.5rem;">
             
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">${e.genero}</li>
@@ -44,13 +42,21 @@ function imprimirmayor() {
 
 }
 
-console.log(listamayorprecio);
-
 function estilo() {
 
     body.setAttribute("style", "background-color : gray")
 
+    let carta = document.getElementsByClassName("card")
+    for (const val1 of carta) {
+        val1.setAttribute("style", "background-color:black;width:20rem;margin:1rem")
+    }
+    let list = document.getElementsByClassName("list-group-item")
+    for (const val of list) {
+        val.setAttribute("style", "background-color:black;color:gray")
+    }
+
 }
 
 estilo()
-imprimirmayor()
+
+imprimirmenor()
