@@ -7,73 +7,160 @@ const body = document.body
 
 let imprimirCatJazz = document.getElementById("jazz")
 imprimirCatJazz.addEventListener("click", imprimirjazz)
-let productosj = productos.filter(Productosj => Productosj.genero === "jazz");
+
+
 
 let imprimirCatRock = document.getElementById("rock")
 imprimirCatRock.addEventListener("click", imrpimirRock)
-let productosr = productos.filter(Productosr => Productosr.genero === "rock")
+
+
+let imprimirCatRockprog = document.getElementById("rock.prog")
+imprimirCatRockprog.addEventListener("click", imrpimirRockprog)
+
+
+let imprimirCatBlues = document.getElementById("blues")
+imprimirCatBlues.addEventListener("click", imprimirCatBlues)
+
+let imprimirCatRocknacional = document.getElementById("rock.nacional")
+imprimirCatRocknacional.addEventListener("click", imprimirCatRocknacional)
 
 function imprimirjazz() {
 
 
 
+    if (imprimirCatJazz.addEventListener = true) {
 
+        let productosj = productos.filter(Productosj => Productosj.genero === "jazz");
 
-    let idImprimirj = document.getElementById("cardscat")
+        let idImprimirj = document.getElementById("cardscat")
 
-    productosj.forEach(e => {
-        idImprimirj.innerHTML += `
+        productosj.forEach(e => {
+            idImprimirj.innerHTML += `
         <div class="card" style="width: 20rem;margin:20px;">
-        <img src="${e.img}" class="card-img-top" alt="...">
-        <div class="card" style="width: 18.5rem;">
+        <img src="${e.img}" class="cards card-img-top" alt="...">
+        <div class="cards" style="width: 18.5rem;">
             
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">${e.genero}</li>
                 <li class="list-group-item">${e.banda}</li>
-                <li class="list-group-item">${e.precio}</li>
-                <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
+                <li class="list-group-item">Precio : ${e.precio} $</li>
+                <a href="" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
                 </ul>
         
             </div>
         </div>`
+
+
+
+        })
+
+        console.log(productosj);
+
         body.setAttribute("style", "background-color : red")
 
-    })
+        let carta = document.getElementsByClassName("card")
+        for (const cards of carta) {
+            cards.setAttribute("style", "background-color:black;width:20rem;margin:1rem;")
+        }
+        let lista = document.getElementsByClassName("cards")
+        for (const val of lista) {
+            val.setAttribute("style", "border-color:gray;background-color:black")
+        }
+
+        let list = document.getElementsByClassName("list-group-item")
+        for (const val of list) {
+            val.setAttribute("style", "background-color:black;color:white;border-color:gray")
+        }
+    }
+
 
 }
 
 
 function imrpimirRock() {
+    if (imprimirCatRock.addEventListener = true) {
 
-    let idImprimirR = document.getElementById("cardscat")
+        let productosr = productos.filter(Productosr => Productosr.genero === "rock")
+        let idImprimirR = document.getElementById("cardscat")
 
-    productosr.forEach(e => {
-        idImprimirR.innerHTML += `
+        productosr.forEach(e => {
+            idImprimirR.innerHTML += `
         <div class="card" style="width: 20rem;margin:20px;">
         <img src="${e.img}" class="card-img-top" alt="...">
-        <div class="card" style="width: 18.5rem;">
+        <div class="cards" style="width: 18.5rem;">
             
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">${e.genero}</li>
                 <li class="list-group-item">${e.banda}</li>
-                <li class="list-group-item">${e.precio}</li>
+                <li class="list-group-item">Precio : ${e.precio} $</li>
                 <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
                 </ul>
         
             </div>
         </div>`
-    })
+        })
 
+        console.log(productosr);
 
+        body.setAttribute("style", "background-color : firebrick")
 
+        let carta = document.getElementsByClassName("card")
+        for (const cards of carta) {
+            cards.setAttribute("style", "background-color:black;width:20rem;margin:1rem;")
+        }
+        let lista = document.getElementsByClassName("cards")
+        for (const val of lista) {
+            val.setAttribute("style", "border-color:gray;background-color:black")
+        }
 
-
+        let list = document.getElementsByClassName("list-group-item")
+        for (const val of list) {
+            val.setAttribute("style", "background-color:black;color:white;border-color:gray")
+        }
+    }
 }
 
 
+function imrpimirRockprog() {
+    if (imprimirCatRock.addEventListener = true) {
 
+        let productosrp = productos.filter(Productosr => Productosr.genero === "rock prog")
+        let idImprimirRp = document.getElementById("cardscat")
 
+        productosrp.forEach(e => {
+            idImprimirRp.innerHTML += `
+        <div class="card" style="width: 20rem;margin:20px;">
+        <img src="${e.img}" class="card-img-top" alt="...">
+        <div class="cards" style="width: 18.5rem;">
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">${e.genero}</li>
+                <li class="list-group-item">${e.banda}</li>
+                <li class="list-group-item">Precio : ${e.precio} $</li>
+                <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
+                </ul>
+        
+            </div>
+        </div>`
+        })
+        console.log(productosrp);
 
+        body.setAttribute("style", "background-color : rebeccapurple")
+        let carta = document.getElementsByClassName("card")
+        for (const cards of carta) {
+            cards.setAttribute("style", "background-color:black;width:20rem;margin:1rem;")
+        }
+        let lista = document.getElementsByClassName("cards")
+        for (const val of lista) {
+            val.setAttribute("style", "border-color:gray;background-color:black")
+        }
+
+        let list = document.getElementsByClassName("list-group-item")
+        for (const val of list) {
+            val.setAttribute("style", "background-color:black;color:white;border-color:gray")
+        }
+    }
+}
 
 
 

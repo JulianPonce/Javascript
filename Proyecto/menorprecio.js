@@ -25,14 +25,14 @@ function imprimirmenor() {
 
     listamenorprecio.forEach(e => {
         idImprimir.innerHTML += `
-        <div class="card" style="width: 20rem;margin:1rem">
+        <div class="cards" style="width: 20rem;margin:1rem">
         <img src="${e.img}" class="card-img-top" alt="...">
-        <div class="cards" style="width: 18.5rem;">
+        <div class="card" style="width: 18.5rem;">
             
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">${e.genero}</li>
                 <li class="list-group-item">${e.banda}</li>
-                <li class="list-group-item">${e.precio}</li>
+                <li class="list-group-item">Precio : ${e.precio} $</li>
                 <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
             </ul>
         
@@ -44,19 +44,25 @@ function imprimirmenor() {
 
 function estilo() {
 
-    body.setAttribute("style", "background-color : gray")
+    body.setAttribute("style", "background-color : #580F7D")
 
-    let carta = document.getElementsByClassName("card")
-    for (const val1 of carta) {
-        val1.setAttribute("style", "background-color:black;width:20rem;margin:1rem")
+    let carta = document.getElementsByClassName("cards")
+    for (const cards of carta) {
+        cards.setAttribute("style", "background-color:black;width:20rem;margin:1rem;")
     }
+    let lista = document.getElementsByClassName("card")
+    for (const val of lista) {
+        val.setAttribute("style", "border-color:gray")
+    }
+
     let list = document.getElementsByClassName("list-group-item")
     for (const val of list) {
-        val.setAttribute("style", "background-color:black;color:gray")
+        val.setAttribute("style", "background-color:black;color:white;border-color:gray")
     }
 
 }
 
-estilo()
+
 
 imprimirmenor()
+estilo()

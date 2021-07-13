@@ -27,14 +27,14 @@ function imprimirmayor() {
 
     listamayorprecio.forEach(e => {
         idImprimir.innerHTML += `
-        <div class="card" id="cartas" style="width: 20rem;margin:20px;">
-        <img src="${e.img}" class="card-img-top" alt="...">
-        <div class="cards" style="width: 18.5rem;">
+        <div class="cards" id="cartas" style="width: 20rem;margin:20px;">
+        <img src="${e.img}" class=" card-img-top" alt="...">
+        <div class="card" style="width: 18.5rem;">
             
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">${e.genero}</li>
                 <li class="list-group-item">${e.banda}</li>
-                <li class="list-group-item">${e.precio}</li>
+                <li class="list-group-item">Precio : ${e.precio} $</li>
                 <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
             </ul>
         
@@ -48,14 +48,15 @@ function imprimirmayor() {
 
 console.log(listamayorprecio);
 
+
 function estilo() {
 
-    body.setAttribute("style", "background-color : gray")
-    let carta = document.getElementsByClassName("card")
+    body.setAttribute("style", "background-color : #0D9E44")
+    let carta = document.getElementsByClassName("cards")
     for (const cards of carta) {
         cards.setAttribute("style", "background-color:black;width:20rem;margin:1rem;")
     }
-    let lista = document.getElementsByClassName("cards")
+    let lista = document.getElementsByClassName("card")
     for (const val of lista) {
         val.setAttribute("style", "border-color:gray")
     }
@@ -67,5 +68,5 @@ function estilo() {
 
 }
 
-estilo()
 imprimirmayor()
+estilo()

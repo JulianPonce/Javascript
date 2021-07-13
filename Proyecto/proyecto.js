@@ -10,6 +10,9 @@ class Productos {
         this.img = img;
         this.album = album
     }
+
+
+
 }
 
 const pro1 = new Productos(0, "rock", 350, 4, "Led zepellin:", true, 1970, `img/led-zep.jpg`);
@@ -31,7 +34,10 @@ const pro16 = new Productos(15, "rock nacional", 470, 1, "Pescado rabioso", true
 const pro17 = new Productos(16, "rock nacional", 380, 1, "Invisible", true, 2008, `img/invisible.jpg`);
 const pro18 = new Productos(17, "rock nacional", 420, 1, "Pappo Blues", true, 1967, `img/pappoblues.jpg`);
 
+
+let nav = document.getElementsByClassName("nav-link")
 const body = document.body
+
 let resultado = document.getElementById("title")
 let titulo = document.createElement("h1")
 titulo.setAttribute("class", "text-center mt-5")
@@ -62,19 +68,18 @@ console.log(productos);
 
 
 
-
 let ajson = JSON.stringify(productos)
 localStorage.setItem("productostotal", ajson)
 
+function comprar() {
+    if ((this.stock > 0) && (comprar = true)) {
+        this.stock = this.stock - 1;
+        console.log(`te quedan ${this.stock}`);
+
+    }
 
 
-
-
-
-
-
-
-
+}
 
 function imprimir() {
 
@@ -89,7 +94,7 @@ function imprimir() {
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">${e.genero}</li>
                 <li class="list-group-item">${e.banda}</li>
-                <li class="list-group-item">${e.precio}</li>
+                <li class="list-group-item">Precio : ${e.precio} $</li>
                 <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
                 </ul>
         
@@ -101,7 +106,9 @@ function imprimir() {
 
 function estilo() {
 
-    body.setAttribute("style", "background-color : gray")
+
+
+    body.setAttribute("style", "background-color : #EC3E18")
     let carta = document.getElementsByClassName("cards")
     for (const cards of carta) {
         cards.setAttribute("style", "background-color:black;width:20rem;margin:1rem;")
@@ -117,6 +124,11 @@ function estilo() {
     }
 
 }
+
+
+
 imprimir()
 
 estilo()
+
+comprar(pro1)
