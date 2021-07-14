@@ -32,7 +32,7 @@ function imprimirmayor() {
     listamayorprecio.forEach(e => {
         idImprimir.innerHTML += `
         <div class="cards" id="cartas" style="width: 20rem;margin:20px;">
-        <img src="${e.img}" class=" card-img-top" alt="...">
+        <img src="../${e.img}" class=" card-img-top" alt="...">
         <div class="card" style="width: 18.5rem;">
             
             <ul class="list-group list-group-flush">

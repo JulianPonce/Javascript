@@ -80,6 +80,7 @@ function imprimirjazz() {
     }
 
     remove()
+
 }
 
 
@@ -94,7 +95,7 @@ function imrpimirRock() {
         productosr.forEach(e => {
             idImprimirR.innerHTML += `
         <div class="card" style="width: 20rem;margin:20px;">
-        <img src="${e.img}" class="card-img-top" alt="...">
+        <img src="../${e.img}" class="card-img-top" alt="...">
         <div class="cards" style="width: 18.5rem;">
             
             <ul class="list-group list-group-flush">
@@ -178,8 +179,8 @@ function imrpimirRockprog() {
 
 function remove() {
     if (innerHTML) {
-        const cont = document.getElementById("cardscat")
-        cont.child(innerHTML)
+        let body = document.body
+        body.child(innerHTML)
     }
 }
 

@@ -21,24 +21,24 @@ div.appendChild(titulo)
 titulo.textContent = "Venta online de vinilos"
 
 
-const pro1 = new Productos(0, "rock", 350, 4, "Led zepellin:", true, 1970, `img/led-zep.jpg`);
-const pro2 = new Productos(1, "jazz", 500, 4, "Miles Davis:", true, 1953, `img/miles-davis.jpg`);
-const pro3 = new Productos(2, "rock", 300, 2, "Queen of te stone age", true, 2013, `img/like-clockwork.jpg`);
-const pro4 = new Productos(3, "blues", 430, 3, "Stevie ray vaughan", true, 1981, `img/srv.jpg`);
-const pro5 = new Productos(4, "jazz", 600, 5, "Jhon coltrane", true, 1950, `img/coltrane.jpg`);
-const pro6 = new Productos(5, "blues", 500, 5, "B.B King", true, 1959, `img/bbking.jpg`);
-const pro7 = new Productos(6, "rock prog", 390, 2, "King crimson", true, 1970, `img/King-Crimson-In-the-Court-of-the-Crimson-King.jpg`);
-const pro8 = new Productos(7, "rock", 420, 2, "The rolling stone", true, 1971, `img/rolling-stone.jpg`);
-const pro9 = new Productos(8, "rock prog", 320, 1, "The mars volta", true, 2006, `img/tmv-amp.jpg`);
-const pro10 = new Productos(9, "jazz", 480, 1, "Thelonious monk", true, 1949, `img/monk.jpg`);
-const pro11 = new Productos(10, "rock", 380, 1, "Artick Monkeys", true, 2008, `img/artick-monkeys.jpg`);
-const pro12 = new Productos(11, "rock", 380, 1, "Jimy Hendrix", true, 1967, `img/hendrix.jpg`);
-const pro13 = new Productos(12, "rock nacional", 450, 1, "Charly Garcia", true, 2006, `img/charly.jpg`);
-const pro14 = new Productos(13, "rock prog", 540, 1, "Yes", true, 1949, `img/yes.jpg`);
-const pro15 = new Productos(14, "jazz", 400, 1, "The dave brubeck quartet", true, 2008, `img/takefive.jpg`);
-const pro16 = new Productos(15, "rock nacional", 470, 1, "Pescado rabioso", true, 1967, `img/artaud.jpg`);
-const pro17 = new Productos(16, "rock nacional", 380, 1, "Invisible", true, 2008, `img/invisible.jpg`);
-const pro18 = new Productos(17, "rock nacional", 420, 1, "Pappo Blues", true, 1967, `img/pappoblues.jpg`);
+const pro1 = new Productos(0, "rock", 350, 4, "Led zepellin:", true, 1970, `asset/img/led-zep.jpg`);
+const pro2 = new Productos(1, "jazz", 500, 4, "Miles Davis:", true, 1953, `asset/img/miles-davis.jpg`);
+const pro3 = new Productos(2, "rock", 300, 2, "Queen of te stone age", true, 2013, `asset/img/like-clockwork.jpg`);
+const pro4 = new Productos(3, "blues", 430, 3, "Stevie ray vaughan", true, 1981, `asset/img/srv.jpg`);
+const pro5 = new Productos(4, "jazz", 600, 5, "Jhon coltrane", true, 1950, `asset/img/coltrane.jpg`);
+const pro6 = new Productos(5, "blues", 500, 5, "B.B King", true, 1959, `asset/img/bbking.jpg`);
+const pro7 = new Productos(6, "rock prog", 390, 2, "King crimson", true, 1970, `asset/img/King-Crimson-In-the-Court-of-the-Crimson-King.jpg`);
+const pro8 = new Productos(7, "rock", 420, 2, "The rolling stone", true, 1971, `asset/img/rolling-stone.jpg`);
+const pro9 = new Productos(8, "rock prog", 320, 1, "The mars volta", true, 2006, `asset/img/tmv-amp.jpg`);
+const pro10 = new Productos(9, "jazz", 480, 1, "Thelonious monk", true, 1949, `asset/img/monk.jpg`);
+const pro11 = new Productos(10, "rock", 380, 1, "Artick Monkeys", true, 2008, `asset/img/artick-monkeys.jpg`);
+const pro12 = new Productos(11, "rock", 380, 1, "Jimy Hendrix", true, 1967, `asset/img/hendrix.jpg`);
+const pro13 = new Productos(12, "rock nacional", 450, 1, "Charly Garcia", true, 2006, `asset/img/charly.jpg`);
+const pro14 = new Productos(13, "rock prog", 540, 1, "Yes", true, 1949, `asset/img/yes.jpg`);
+const pro15 = new Productos(14, "jazz", 400, 1, "The dave brubeck quartet", true, 2008, `asset/img/takefive.jpg`);
+const pro16 = new Productos(15, "rock nacional", 470, 1, "Pescado rabioso", true, 1967, `asset/img/artaud.jpg`);
+const pro17 = new Productos(16, "rock nacional", 380, 1, "Invisible", true, 2008, `asset/img/invisible.jpg`);
+const pro18 = new Productos(17, "rock nacional", 420, 1, "Pappo Blues", true, 1967, `asset/img/pappoblues.jpg`);
 
 
 let nav = document.getElementsByClassName("nav-link")
