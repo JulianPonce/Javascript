@@ -34,9 +34,8 @@ function imprimirjazz() {
 
 
 
-
     if (imprimirCatJazz.addEventListener = true) {
-        remove()
+
         let productosj = productos.filter(Productosj => Productosj.genero === "jazz");
 
         let idImprimirj = document.getElementById("cardscat")
@@ -80,13 +79,15 @@ function imprimirjazz() {
         }
     }
 
-
+    remove()
 }
 
 
 function imrpimirRock() {
+
+
     if (imprimirCatRock.addEventListener = true) {
-        remove()
+
         let productosr = productos.filter(Productosr => Productosr.genero === "rock")
         let idImprimirR = document.getElementById("cardscat")
 
@@ -176,8 +177,10 @@ function imrpimirRockprog() {
 }
 
 function remove() {
-
-
+    if (innerHTML) {
+        const cont = document.getElementById("cardscat")
+        cont.child(innerHTML)
+    }
 }
 
 
