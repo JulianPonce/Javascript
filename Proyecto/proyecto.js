@@ -14,6 +14,12 @@ class Productos {
 
 
 }
+let div = document.getElementById("tittle")
+let titulo = document.createElement("h1")
+titulo.setAttribute("class", "text-center mt-5")
+div.appendChild(titulo)
+titulo.textContent = "Venta online de vinilos"
+
 
 const pro1 = new Productos(0, "rock", 350, 4, "Led zepellin:", true, 1970, `img/led-zep.jpg`);
 const pro2 = new Productos(1, "jazz", 500, 4, "Miles Davis:", true, 1953, `img/miles-davis.jpg`);
@@ -37,12 +43,17 @@ const pro18 = new Productos(17, "rock nacional", 420, 1, "Pappo Blues", true, 19
 
 let nav = document.getElementsByClassName("nav-link")
 const body = document.body
+    /**
 
-let resultado = document.getElementById("title")
-let titulo = document.createElement("h1")
-titulo.setAttribute("class", "text-center mt-5")
-body.appendChild(titulo)
-titulo.textContent = "Galeria"
+    let resultado = document.getElementById("tittle")
+    let titulo = document.createElement("h1")
+    titulo.setAttribute("class", "text-center mt-5")
+    body.appendChild(titulo)
+    titulo.textContent = * 
+     */
+
+
+
 
 const productos = []
 
@@ -71,15 +82,10 @@ console.log(productos);
 let ajson = JSON.stringify(productos)
 localStorage.setItem("productostotal", ajson)
 
-function comprar() {
-    if ((this.stock > 0) && (comprar = true)) {
-        this.stock = this.stock - 1;
-        console.log(`te quedan ${this.stock}`);
-
-    }
 
 
-}
+
+//funciones
 
 function imprimir() {
 
@@ -95,7 +101,7 @@ function imprimir() {
                 <li class="list-group-item">${e.genero}</li>
                 <li class="list-group-item">${e.banda}</li>
                 <li class="list-group-item">Precio : ${e.precio} $</li>
-                <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
+                <a href="#" class="btn btn-dark" id="boton" role="button" data-bs-toggle="button">Comprar</a>
                 </ul>
         
             </div>
@@ -125,10 +131,27 @@ function estilo() {
 
 }
 
+function comprar() {
+    if (this.stock > 0) {
+        this.stock = this.stock - 1;
+        console.log(` te quedan ${this.stock} en stock `);
+        alert(`Gracias por comprar un  al precio de ${this.precio} `)
+        if (this.stock === 1) {
+            let pedido = confirm(`te queda un prodcuto de  desea pedir 5 mas ?`);
+            if (pedido == true) {
+                this.stock = this.stock + 5;
+                console.log("Se pidieron 5 productos al proovedor");
+
+            }
+
+        }
+    }
+
+
+}
+
 
 
 imprimir()
 
 estilo()
-
-comprar(pro1)

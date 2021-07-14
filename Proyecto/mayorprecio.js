@@ -4,7 +4,11 @@ const productos = JSON.parse(dejson)
 let cattest = []
 const body = document.body
 
-
+let div = document.getElementById("tittle")
+let titulo = document.createElement("h1")
+titulo.setAttribute("class", "text-center mt-5")
+div.appendChild(titulo)
+titulo.textContent = "Mayor precio"
 
 
 let listamayorprecio = productos.sort((a, b) => {
@@ -35,14 +39,19 @@ function imprimirmayor() {
                 <li class="list-group-item">${e.genero}</li>
                 <li class="list-group-item">${e.banda}</li>
                 <li class="list-group-item">Precio : ${e.precio} $</li>
-                <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
+                <a href="#" class="btn btn-dark" id="boton" role="button" data-bs-toggle="button">Comprar</a>
             </ul>
         
             </div>
         </div>`
+
     })
 
 }
+
+
+
+
 
 
 
@@ -67,6 +76,27 @@ function estilo() {
     }
 
 }
+
+function comprar() {
+    if (this.stock > 0) {
+        this.stock = this.stock - 1;
+        console.log(` te quedan ${this.stock} en stock `);
+        alert(`Gracias por comprar un  al precio de ${this.precio} `)
+        if (this.stock === 1) {
+            let pedido = confirm(`te queda un prodcuto de  desea pedir 5 mas ?`);
+            if (pedido == true) {
+                this.stock = this.stock + 5;
+                console.log("Se pidieron 5 productos al proovedor");
+
+            }
+
+        }
+    }
+
+
+}
+
+
 
 imprimirmayor()
 estilo()

@@ -1,13 +1,16 @@
 let dejson = localStorage.getItem("productostotal")
 const productos = JSON.parse(dejson)
-
+let div = document.getElementById("tittle")
+let titulo = document.createElement("h1")
+titulo.setAttribute("class", "text-center mt-5")
+div.appendChild(titulo)
+titulo.textContent = "Elija el genero que desea ver"
 
 let cattest = []
 const body = document.body
 
 let imprimirCatJazz = document.getElementById("jazz")
 imprimirCatJazz.addEventListener("click", imprimirjazz)
-
 
 
 let imprimirCatRock = document.getElementById("rock")
@@ -24,12 +27,16 @@ imprimirCatBlues.addEventListener("click", imprimirCatBlues)
 let imprimirCatRocknacional = document.getElementById("rock.nacional")
 imprimirCatRocknacional.addEventListener("click", imprimirCatRocknacional)
 
+
+
+
 function imprimirjazz() {
 
 
 
-    if (imprimirCatJazz.addEventListener = true) {
 
+    if (imprimirCatJazz.addEventListener = true) {
+        remove()
         let productosj = productos.filter(Productosj => Productosj.genero === "jazz");
 
         let idImprimirj = document.getElementById("cardscat")
@@ -79,7 +86,7 @@ function imprimirjazz() {
 
 function imrpimirRock() {
     if (imprimirCatRock.addEventListener = true) {
-
+        remove()
         let productosr = productos.filter(Productosr => Productosr.genero === "rock")
         let idImprimirR = document.getElementById("cardscat")
 
@@ -118,10 +125,14 @@ function imrpimirRock() {
             val.setAttribute("style", "background-color:black;color:white;border-color:gray")
         }
     }
+
+
 }
 
 
 function imrpimirRockprog() {
+
+
     if (imprimirCatRock.addEventListener = true) {
 
         let productosrp = productos.filter(Productosr => Productosr.genero === "rock prog")
@@ -159,15 +170,15 @@ function imrpimirRockprog() {
         for (const val of list) {
             val.setAttribute("style", "background-color:black;color:white;border-color:gray")
         }
+
     }
+
 }
 
+function remove() {
 
 
-
-
-
-
+}
 
 
 
