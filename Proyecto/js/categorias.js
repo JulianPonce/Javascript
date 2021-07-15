@@ -1,7 +1,7 @@
 //-------------------------"base de datos"
 let dejson = localStorage.getItem("productostotal")
 const productos = JSON.parse(dejson)
-let div = document.getElementById("tittle")
+
 
 
 
@@ -27,6 +27,7 @@ imprimirCatBlues.addEventListener("click", imrpimirBlues)
 let imprimirCatRocknacional = document.getElementById("rock.nacional")
 imprimirCatRocknacional.addEventListener("click", imprimirCatRocknacional)
 
+let div = document.getElementById("tittle")
 let titulo = document.createElement("h1")
 titulo.setAttribute("class", "text-center mt-5")
 div.appendChild(titulo)
