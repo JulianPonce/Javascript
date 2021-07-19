@@ -1,0 +1,15 @@
+div {
+    background-color: rgba(15, 15, 27, 0.651);
+}
+
+h1 {
+    color: darkgray;
+    font-family: Tahoma;
+}
+
+a.nav-link {
+    color: darkgray;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 20px;
+    letter-spacing: 3px;
+}

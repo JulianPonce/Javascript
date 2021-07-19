@@ -31,7 +31,7 @@ let div = document.getElementById("tittle")
 let titulo = document.createElement("h1")
 titulo.setAttribute("class", "text-center mt-5")
 div.appendChild(titulo)
-titulo.textContent = "Elija el genero que desea ver"
+titulo.textContent = "Generos disponibles"
 
 
 

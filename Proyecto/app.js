@@ -14,7 +14,7 @@ class Productos {
 
 
 }
-let div = document.getElementById("tittle")
+let div = document.querySelector("#tittle")
 let titulo = document.createElement("h1")
 titulo.setAttribute("class", "text-center mt-5")
 div.appendChild(titulo)
