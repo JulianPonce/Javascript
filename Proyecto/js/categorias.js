@@ -25,7 +25,7 @@ let imprimirCatBlues = document.getElementById("blues")
 imprimirCatBlues.addEventListener("click", imrpimirBlues)
 
 let imprimirCatRocknacional = document.getElementById("rock.nacional")
-imprimirCatRocknacional.addEventListener("click", imprimirCatRocknacional)
+imprimirCatRocknacional.addEventListener("click", imprimirRocknacional)
 
 let div = document.getElementById("tittle")
 let titulo = document.createElement("h1")
@@ -80,7 +80,7 @@ function imprimirjazz() {
 
         console.log(productosj);
 
-        body.setAttribute("style", "background-color : red")
+        body.setAttribute("style", "background-color : rgb(57, 58, 100)")
 
         let carta = document.getElementsByClassName("card")
         for (const cards of carta) {
@@ -156,7 +156,7 @@ function imrpimirRock() {
 
 function imrpimirRockprog() {
 
-    if (imprimirCatRock.addEventListener = true) {
+    if (imprimirCatRockprog.addEventListener = true) {
 
         let productosrp = productos.filter(Productosr => Productosr.genero === "rock prog")
         let idImprimirRp = document.getElementById("cardscat")
@@ -182,7 +182,7 @@ function imrpimirRockprog() {
         })
         console.log(productosrp);
 
-        body.setAttribute("style", "background-color : rebeccapurple")
+        body.setAttribute("style", "background-color : rgb(128, 39, 39)")
         let carta = document.getElementsByClassName("card")
         for (const cards of carta) {
             cards.setAttribute("style", "background-color:black;width:20rem;margin:1rem;")
@@ -252,6 +252,57 @@ function imrpimirBlues() {
     }
 
 }
+
+function imprimirRocknacional() {
+    if (imprimirCatRocknacional.addEventListener = true) {
+
+        let Productosrn = productos.filter(Productosrn => Productosrn.genero === "rock nacional")
+        let idImprimirRn = document.getElementById("cardscat")
+        idImprimirRn.innerHTML = '';
+        Productosrn.forEach(e => {
+            idImprimirRn.innerHTML += `
+        <div class="card" style="width: 20rem;margin:20px;">
+        <img src="../${e.img}" class="card-img-top" alt="...">
+        <div class="cards" style="width: 18.5rem;">
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">${e.genero}</li>
+                <li class="list-group-item">${e.banda}</li>
+                <li class="list-group-item">Precio : ${e.precio} $</li>
+                <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
+                </ul>
+        
+            </div>
+        </div>`
+
+            localStorage.setItem("rock nacional", JSON.stringify(Productosrn))
+            cattest.push(Productosrn)
+        })
+
+        console.log(Productosrn);
+
+
+
+
+        body.setAttribute("style", "background-color : rgb(35, 145, 99)")
+        let carta = document.getElementsByClassName("card")
+        for (const cards of carta) {
+            cards.setAttribute("style", "background-color:black;width:20rem;margin:1rem;")
+        }
+        let lista = document.getElementsByClassName("cards")
+        for (const val of lista) {
+            val.setAttribute("style", "border-color:gray;background-color:black")
+        }
+
+        let list = document.getElementsByClassName("list-group-item")
+        for (const val of list) {
+            val.setAttribute("style", "background-color:black;color:white;border-color:gray")
+        }
+
+    }
+
+}
+
 
 console.log(cattest);
 /**
