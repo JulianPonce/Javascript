@@ -42,7 +42,7 @@ const pro16 = new Productos(15, "rock nacional", 470, 1, "Pescado rabioso", true
 const pro17 = new Productos(16, "rock nacional", 380, 1, "Invisible", true, 2008, `asset/img/invisible.jpg`);
 const pro18 = new Productos(17, "rock nacional", 420, 1, "Pappo Blues", true, 1967, `asset/img/pappoblues.jpg`);
 
-
+let sum = 0;
 let nav = document.getElementsByClassName("nav-link")
 const body = document.body
 
@@ -107,18 +107,17 @@ function imprimir() {
         $(`#boton${e.id}`).on(`click`, function() {
 
             console.log(`compraste un disco de ${e.banda} su precio es de ${e.precio} $`);
+
             carrito.push(Number(`${e.precio}`))
 
-            let sum = 0;
+
             for (let i = 0; i < carrito.length; i++) {
                 sum += carrito[i];
             }
-            console.log(`Total = ${sum}`);
-            console.log(carrito);
 
 
-            let ajson = JSON.stringify(carrito, `${sum}`)
-            localStorage.setItem("carrito", ajson)
+            let ajson1 = JSON.stringify(carrito)
+            localStorage.setItem("carrito", ajson1)
 
             let ajson2 = JSON.stringify(sum)
             localStorage.setItem("total", ajson2)
@@ -131,9 +130,8 @@ function imprimir() {
             let rest = carrito;
             for (let j = 0; j < carrito.length; j++) {
 
-                rest -= j;
+
             }
-            console.log(`Total = ${rest}`);
 
 
         })
@@ -141,6 +139,14 @@ function imprimir() {
 }
 
 
+let dejson1 = localStorage.getItem("carrito")
+let carro = JSON.parse(dejson1)
+
+let dejson2 = localStorage.getItem("total")
+let total = JSON.parse(dejson2)
+
+console.log(total);
+console.log(carro);
 
 
 function estilo() {

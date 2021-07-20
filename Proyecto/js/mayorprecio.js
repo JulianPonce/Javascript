@@ -1,6 +1,17 @@
 let dejson = localStorage.getItem("productostotal")
 const productos = JSON.parse(dejson)
 
+let dejson1 = localStorage.getItem("carrito")
+let carrito = JSON.parse(dejson1)
+
+let dejson2 = localStorage.getItem("total")
+let total = JSON.parse(dejson2)
+let sum = 0
+
+
+
+
+
 let cattest = []
 const body = document.body
 
@@ -41,7 +52,7 @@ function imprimirmayor() {
                 <li class="list-group-item">${e.genero}</li>
                 <li class="list-group-item">${e.banda}</li>
                 <li class="list-group-item">Precio : ${e.precio} $</li>
-                <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
+                <a href="#" class="btn btn-dark" id="boton${e.id}"  role="button" data-bs-toggle="button">Comprar</a>
             </ul>
         
             </div>
@@ -53,11 +64,31 @@ function imprimirmayor() {
 
 
 
+    productos.forEach(e => {
+        $(`#boton${e.id}`).on(`click`, function() {
+
+            console.log(`compraste un disco de ${e.banda} su precio es de ${e.precio} $`);
+            carrito.push(Number(`${e.precio}`))
+
+
+            for (let i = 0; i < carrito.length; i++) {
+                sum += carrito[i];
+            }
 
 
 
+            let ajson1 = JSON.stringify(carrito)
+            localStorage.setItem("carrito", ajson1)
+
+            let ajson2 = JSON.stringify(sum)
+            localStorage.setItem("total", ajson2)
+
+        })
+    })
 
 
+    console.log(total);
+    console.log(carrito);
     /* let idImprimir = document.getElementById("cardsmayor")
 
     listamayorprecio.forEach(e => {
