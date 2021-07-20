@@ -14,11 +14,13 @@ class Productos {
 
 
 }
-let div = document.querySelector("#tittle")
+/*let div = document.querySelector("#tittle")
 let titulo = document.createElement("h1")
 titulo.setAttribute("class", "text-center mt-5")
 div.appendChild(titulo)
-titulo.textContent = "Venta online de vinilos"
+titulo.textContent = "Venta online de vinilos"*/
+
+$("#tittle").append(`<h1>Tienda online de vinilos</h1>`)
 
 
 const pro1 = new Productos(0, "rock", 350, 4, "Led zepellin:", true, 1970, `asset/img/led-zep.jpg`);
@@ -43,17 +45,10 @@ const pro18 = new Productos(17, "rock nacional", 420, 1, "Pappo Blues", true, 19
 
 let nav = document.getElementsByClassName("nav-link")
 const body = document.body
-    /**
-
-    let resultado = document.getElementById("tittle")
-    let titulo = document.createElement("h1")
-    titulo.setAttribute("class", "text-center mt-5")
-    body.appendChild(titulo)
-    titulo.textContent = * 
-     */
 
 
 
+const carrito = []
 
 const productos = []
 
@@ -89,26 +84,44 @@ localStorage.setItem("productostotal", ajson)
 
 function imprimir() {
 
-    let idImprimir = document.getElementById("cardsPro")
-
     productos.forEach(e => {
-        idImprimir.innerHTML += `
+        $("#cardsPro").append(
+            `
         <div class="cards" style="width: 20rem;">
         <img src="${e.img}" class="card-img-top" alt="...">
         <div class="card" style="width: 18.5rem;">
-            
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">${e.genero}</li>
-                <li class="list-group-item">${e.banda}</li>
-                <li class="list-group-item">Precio : ${e.precio} $</li>
-                <a href="#" class="btn btn-dark" id="boton" role="button" data-bs-toggle="button">Comprar</a>
-                </ul>
-        
-            </div>
-        </div>`
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">${e.genero}</li>
+        <li class="list-group-item">${e.banda}</li>
+        <li class="list-group-item">Precio : ${e.precio} $</li>
+        <a href="#" class="btn btn-dark" id="boton${e.id}" role="button" data-bs-toggle="button">Comprar</a>
+        </ul>
+
+    </div>
+</div>`)
+    });
+
+
+    productos.forEach(e => {
+        $(`#boton${e.id}`).on(`click`, function() {
+
+            console.log(`compraste un disco de ${e.banda} su precio es de ${e.precio} $`);
+            carrito.push(Number(`${e.precio}`))
+
+            let sum = 0;
+            for (let i = 0; i < carrito.length; i++) {
+                sum += carrito[i];
+            }
+            console.log(`Total = ${sum}`);
+        })
     })
 
+
+
 }
+
+
+
 
 function estilo() {
 
@@ -132,20 +145,6 @@ function estilo() {
 }
 
 function comprar() {
-    if (this.stock > 0) {
-        this.stock = this.stock - 1;
-        console.log(` te quedan ${this.stock} en stock `);
-        alert(`Gracias por comprar un  al precio de ${this.precio} `)
-        if (this.stock === 1) {
-            let pedido = confirm(`te queda un prodcuto de  desea pedir 5 mas ?`);
-            if (pedido == true) {
-                this.stock = this.stock + 5;
-                console.log("Se pidieron 5 productos al proovedor");
-
-            }
-
-        }
-    }
 
 
 }

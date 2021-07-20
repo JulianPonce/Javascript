@@ -3,11 +3,13 @@ const productos = JSON.parse(dejson)
 
 const body = document.body
 
-let div = document.getElementById("tittle")
+/*let div = document.getElementById("tittle")
 let titulo = document.createElement("h1")
 titulo.setAttribute("class", "text-center mt-5")
 div.appendChild(titulo)
-titulo.textContent = "Menor precio"
+titulo.textContent = "Menor precio"*/
+
+$("#tittle").append(`<h1>Lista por menor precio</h1>`)
 
 
 let listamenorprecio = productos.sort((a, b) => {

@@ -4,11 +4,13 @@ const productos = JSON.parse(dejson)
 let cattest = []
 const body = document.body
 
-let div = document.getElementById("tittle")
-let titulo = document.createElement("h1")
-titulo.setAttribute("class", "text-center mt-5")
-div.appendChild(titulo)
-titulo.textContent = "Mayor precio"
+/* let div = document.getElementById("tittle")
+// let titulo = document.createElement("h1")
+// titulo.setAttribute("class", "text-center mt-5")
+// div.appendChild(titulo)
+// titulo.textContent = "Mayor precio"*/
+
+$("#tittle").append(`<h1>Lista por mayor precio</h1>`)
 
 
 let listamayorprecio = productos.sort((a, b) => {
@@ -31,7 +33,7 @@ function imprimirmayor() {
 
     listamayorprecio.forEach(e => {
         idImprimir.innerHTML += `
-        <div class="cards" id="cartas" style="width: 20rem;margin:20px;">
+        <div class="cards" id="cartas" style="width: 20rem;margin:1rem;">
         <img src="../${e.img}" class=" card-img-top" alt="...">
         <div class="card" style="width: 18.5rem;">
             

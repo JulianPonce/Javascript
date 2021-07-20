@@ -27,12 +27,12 @@ imprimirCatBlues.addEventListener("click", imrpimirBlues)
 let imprimirCatRocknacional = document.getElementById("rock.nacional")
 imprimirCatRocknacional.addEventListener("click", imprimirRocknacional)
 
-let div = document.getElementById("tittle")
+/*let div = document.getElementById("tittle")
 let titulo = document.createElement("h1")
 titulo.setAttribute("class", "text-center mt-5")
 div.appendChild(titulo)
-titulo.textContent = "Generos disponibles"
-
+titulo.textContent = "Generos disponibles"*/
+$("#tittle").append(`<h1>Generos disponibles</h1>`)
 
 
 
