@@ -26,10 +26,39 @@ let listamayorprecio = productos.sort((a, b) => {
 });
 
 
+console.log(listamayorprecio);
 
 function imprimirmayor() {
 
-    let idImprimir = document.getElementById("cardsmayor")
+
+    listamayorprecio.forEach(e => {
+        $("#cardsmayor").append(`
+        <div class="cards" style="width: 20rem;margin:1rem">
+        <img src="../${e.img}" class="card-img-top" alt="...">
+        <div class="card" style="width: 18.5rem;">
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">${e.genero}</li>
+                <li class="list-group-item">${e.banda}</li>
+                <li class="list-group-item">Precio : ${e.precio} $</li>
+                <a href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Comprar</a>
+            </ul>
+        
+            </div>
+        </div>`)
+
+
+    })
+
+
+
+
+
+
+
+
+
+    /* let idImprimir = document.getElementById("cardsmayor")
 
     listamayorprecio.forEach(e => {
         idImprimir.innerHTML += `
@@ -47,7 +76,7 @@ function imprimirmayor() {
             </div>
         </div>`
 
-    })
+    })*/
 
 }
 
@@ -57,7 +86,6 @@ function imprimirmayor() {
 
 
 
-console.log(listamayorprecio);
 
 
 function estilo() {

@@ -94,7 +94,8 @@ function imprimir() {
         <li class="list-group-item">${e.genero}</li>
         <li class="list-group-item">${e.banda}</li>
         <li class="list-group-item">Precio : ${e.precio} $</li>
-        <a href="#" class="btn btn-dark" id="boton${e.id}" role="button" data-bs-toggle="button">Comprar</a>
+        <a href="#" class="btn btn-dark" id="boton${e.id}" role="button" data-bs-toggle="button">Añadir a carro</a>
+        <a href="#" class="btn btn-dark" id="botonquitar${e.id}" role="button" data-bs-toggle="button">Quitar del carro</a>
         </ul>
 
     </div>
@@ -113,11 +114,30 @@ function imprimir() {
                 sum += carrito[i];
             }
             console.log(`Total = ${sum}`);
+            console.log(carrito);
+
+
+            let ajson = JSON.stringify(carrito, `${sum}`)
+            localStorage.setItem("carrito", ajson)
+
+            let ajson2 = JSON.stringify(sum)
+            localStorage.setItem("total", ajson2)
+
         })
     })
+    productos.forEach(e => {
+        $(`#botonquitar${e.id}`).on(`click`, function() {
+
+            let rest = carrito;
+            for (let j = 0; j < carrito.length; j++) {
+
+                rest -= j;
+            }
+            console.log(`Total = ${rest}`);
 
 
-
+        })
+    })
 }
 
 
