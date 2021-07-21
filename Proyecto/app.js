@@ -45,7 +45,7 @@ const pro18 = new Productos(17, "rock nacional", 420, 1, "Pappo Blues", true, 19
 let sum = 0;
 let nav = document.getElementsByClassName("nav-link")
 const body = document.body
-
+const shopContainer = document.querySelector(`.shoppingCartItemsContainer`)
 
 
 const carrito = []
@@ -85,16 +85,16 @@ localStorage.setItem("productostotal", ajson)
 function imprimir() {
 
     productos.forEach(e => {
-        $("#cardsPro").append(
+        $("#cardsPro").prepend(
             `
         <div class="cards" style="width: 20rem;">
-        <img src="${e.img}" class="card-img-top" alt="...">
+        <img src="${e.img}" class="item card-img-top" alt="...">
         <div class="card" style="width: 18.5rem;">
         <ul class="list-group list-group-flush">
         <li class="list-group-item">${e.genero}</li>
-        <li class="list-group-item">${e.banda}</li>
-        <li class="list-group-item">Precio : ${e.precio} $</li>
-        <a href="#" class="btn btn-dark" id="boton${e.id}" role="button" data-bs-toggle="button">Añadir a carro</a>
+        <li class="item list-group-item">${e.banda}</li>
+        <li class="item list-group-item">Precio : ${e.precio} $</li>
+        <a href="#" class="boton btn-dark" id="boton${e.id}" role="button" data-bs-toggle="button">Añadir a carro</a>
         <a href="#" class="btn btn-dark" id="botonquitar${e.id}" role="button" data-bs-toggle="button">Quitar del carro</a>
         </ul>
 
@@ -102,7 +102,76 @@ function imprimir() {
 </div>`)
     });
 
+    productos.forEach(e => {
+        $(`#boton${e.id}`).on(`click`, function() {
 
+
+
+            console.log(`compraste un disco de ${e.banda} su precio es de ${e.precio} $`);
+
+            carrito.push(Number(`${e.precio}`))
+
+
+            for (let i = 0; i < carrito.length; i++) {
+                sum += carrito[i];
+            }
+
+            $(`.producto`).append(`<h2> ${e.banda} <h2>`);
+            $(`.precio`).append(` <h2> ${e.precio}$<h2>`);
+
+            $(`.shoppingCartTotal`).append(`<h2>${total}$</h2> `)
+
+            let ajson1 = JSON.stringify(carrito)
+            localStorage.setItem("carrito", ajson1)
+
+            let ajson2 = JSON.stringify(sum)
+            localStorage.setItem("total", ajson2)
+
+        })
+    })
+}
+
+
+/*  const agregarCarro = document.querySelectorAll(`.boton`)
+  agregarCarro.forEach(agregarCarros => {
+      agregarCarros.addEventListener(`click`, clickCompra)
+  })
+
+
+  function clickCompra(event) {
+      const buttom = event.target;
+      const item = buttom.closest(`.item`)
+      console.log(item);
+
+  }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     productos.forEach(e => {
         $(`#boton${e.id}`).on(`click`, function() {
 
@@ -140,11 +209,41 @@ function imprimir() {
 
         })
     })
+*/
 
 
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 let dejson1 = localStorage.getItem("carrito")
