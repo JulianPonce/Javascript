@@ -94,7 +94,7 @@ function imprimir() {
         <li class="list-group-item">${e.genero}</li>
         <li class="item list-group-item">${e.banda}</li>
         <li class="item list-group-item">Precio : ${e.precio} $</li>
-        <a href="#" class="boton btn-dark" id="boton${e.id}" role="button" data-bs-toggle="button">Añadir a carro</a>
+        <a href="#" class="btn btn-dark" id="boton${e.id}" role="button" data-bs-toggle="button">Añadir a carro</a>
        
         </ul>
 
@@ -121,7 +121,7 @@ function imprimir() {
             $(`.producto`).append(`<h2> ${e.banda} <h2>`);
             $(`.precio`).append(` <h2> ${e.precio}$<h2>`);
             $(`.quitar`).append(`<button type="button" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>`)
-            $(`.shoppingCartTotal`).append(`<h2>${sum}$</h2> `)
+            $(`.shoppingCartTotal`).append(`<h2 clase= "">${sum}$</h2> `)
             console.log(sum);
             let ajson1 = JSON.stringify(carrito)
             localStorage.setItem("carrito", ajson1)
