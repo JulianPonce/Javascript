@@ -85,7 +85,7 @@ localStorage.setItem("productostotal", ajson)
 function imprimir() {
 
     productos.forEach(e => {
-        $("#cardsPro").prepend(
+        $("#cardsPro").append(
             `
         <div class="cards" style="width: 20rem;">
         <img src="${e.img}" class="item card-img-top" alt="...">
@@ -95,7 +95,7 @@ function imprimir() {
         <li class="item list-group-item">${e.banda}</li>
         <li class="item list-group-item">Precio : ${e.precio} $</li>
         <a href="#" class="boton btn-dark" id="boton${e.id}" role="button" data-bs-toggle="button">Añadir a carro</a>
-        <a href="#" class="btn btn-dark" id="botonquitar${e.id}" role="button" data-bs-toggle="button">Quitar del carro</a>
+       
         </ul>
 
     </div>
