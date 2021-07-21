@@ -106,6 +106,8 @@ function imprimir() {
     productos.forEach(e => {
         $(`#boton${e.id}`).on(`click`, function() {
 
+
+
             console.log(`compraste un disco de ${e.banda} su precio es de ${e.precio} $`);
 
             carrito.push(Number(`${e.precio}`))
@@ -115,6 +117,8 @@ function imprimir() {
                 sum += carrito[i];
             }
 
+            $("#carrito").append(`</h2>compraste un disco de ${e.banda} su precio es de ${e.precio} $ <h2>`);
+            $("#totalcarro").append(`<h2>Total = ${total} $</h2> `)
 
             let ajson1 = JSON.stringify(carrito)
             localStorage.setItem("carrito", ajson1)
@@ -136,6 +140,10 @@ function imprimir() {
 
         })
     })
+
+
+
+
 }
 
 
