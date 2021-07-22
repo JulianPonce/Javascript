@@ -68,17 +68,17 @@ function imprimirmayor() {
         $(`#boton${e.id}`).on(`click`, function() {
 
             console.log(`compraste un disco de ${e.banda} su precio es de ${e.precio} $`);
-            carrito.push(Number(`${e.precio}`))
+            carrito.push(e)
 
 
             for (let i = 0; i < carrito.length; i++) {
-                sum += carrito[i];
+                sum += e.precio;
             }
 
             $(`.producto`).append(`<h2> ${e.banda} <h2>`);
             $(`.precio`).append(` <h2> ${e.precio}$<h2>`);
 
-            $(`.shoppingCartTotal`).append(`<h2>${total}$</h2> `)
+            $(`.shoppingCartTotal`).append(`<h2>${sum}$</h2> `)
 
             let ajson1 = JSON.stringify(carrito)
             localStorage.setItem("carrito", ajson1)
@@ -90,7 +90,7 @@ function imprimirmayor() {
     })
 
 
-    console.log(total);
+    console.log(sum);
     console.log(carrito);
     /* let idImprimir = document.getElementById("cardsmayor")
 
@@ -145,18 +145,9 @@ function comprar() {
     if (this.stock > 0) {
         this.stock = this.stock - 1;
         console.log(` te quedan ${this.stock} en stock `);
-        alert(`Gracias por comprar un  al precio de ${this.precio} `)
-        if (this.stock === 1) {
-            let pedido = confirm(`te queda un prodcuto de  desea pedir 5 mas ?`);
-            if (pedido == true) {
-                this.stock = this.stock + 5;
-                console.log("Se pidieron 5 productos al proovedor");
-
-            }
-
-        }
+    } else {
+        alert("no que quedan mas productos de ")
     }
-
 
 }
 

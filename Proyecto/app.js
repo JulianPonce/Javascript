@@ -23,8 +23,8 @@ titulo.textContent = "Venta online de vinilos"*/
 $("#tittle").append(`<h1>Tienda online de vinilos</h1>`)
 
 
-const pro1 = new Productos(0, "rock", 350, 4, "Led zepellin:", true, 1970, `asset/img/led-zep.jpg`);
-const pro2 = new Productos(1, "jazz", 500, 4, "Miles Davis:", true, 1953, `asset/img/miles-davis.jpg`);
+const pro1 = new Productos(0, "rock", 350, 3, "Led zepellin:", true, 1970, `asset/img/led-zep.jpg`);
+const pro2 = new Productos(1, "jazz", 500, 3, "Miles Davis:", true, 1953, `asset/img/miles-davis.jpg`);
 const pro3 = new Productos(2, "rock", 300, 2, "Queen of te stone age", true, 2013, `asset/img/like-clockwork.jpg`);
 const pro4 = new Productos(3, "blues", 430, 3, "Stevie ray vaughan", true, 1981, `asset/img/srv.jpg`);
 const pro5 = new Productos(4, "jazz", 600, 5, "Jhon coltrane", true, 1950, `asset/img/coltrane.jpg`);
@@ -32,25 +32,28 @@ const pro6 = new Productos(5, "blues", 500, 5, "B.B King", true, 1959, `asset/im
 const pro7 = new Productos(6, "rock prog", 390, 2, "King crimson", true, 1970, `asset/img/King-Crimson-In-the-Court-of-the-Crimson-King.jpg`);
 const pro8 = new Productos(7, "rock", 420, 2, "The rolling stone", true, 1971, `asset/img/rolling-stone.jpg`);
 const pro9 = new Productos(8, "rock prog", 320, 1, "The mars volta", true, 2006, `asset/img/tmv-amp.jpg`);
-const pro10 = new Productos(9, "jazz", 480, 1, "Thelonious monk", true, 1949, `asset/img/monk.jpg`);
-const pro11 = new Productos(10, "rock", 380, 1, "Artick Monkeys", true, 2008, `asset/img/artick-monkeys.jpg`);
-const pro12 = new Productos(11, "rock", 380, 1, "Jimy Hendrix", true, 1967, `asset/img/hendrix.jpg`);
-const pro13 = new Productos(12, "rock nacional", 450, 1, "Charly Garcia", true, 2006, `asset/img/charly.jpg`);
+const pro10 = new Productos(9, "jazz", 480, 2, "Thelonious monk", true, 1949, `asset/img/monk.jpg`);
+const pro11 = new Productos(10, "rock", 380, 2, "Artick Monkeys", true, 2008, `asset/img/artick-monkeys.jpg`);
+const pro12 = new Productos(11, "rock", 380, 2, "Jimy Hendrix", true, 1967, `asset/img/hendrix.jpg`);
+const pro13 = new Productos(12, "rock nacional", 450, 2, "Charly Garcia", true, 2006, `asset/img/charly.jpg`);
 const pro14 = new Productos(13, "rock prog", 540, 1, "Yes", true, 1949, `asset/img/yes.jpg`);
-const pro15 = new Productos(14, "jazz", 400, 1, "The dave brubeck quartet", true, 2008, `asset/img/takefive.jpg`);
-const pro16 = new Productos(15, "rock nacional", 470, 1, "Pescado rabioso", true, 1967, `asset/img/artaud.jpg`);
-const pro17 = new Productos(16, "rock nacional", 380, 1, "Invisible", true, 2008, `asset/img/invisible.jpg`);
-const pro18 = new Productos(17, "rock nacional", 420, 1, "Pappo Blues", true, 1967, `asset/img/pappoblues.jpg`);
+const pro15 = new Productos(14, "jazz", 400, 2, "The dave brubeck quartet", true, 2008, `asset/img/takefive.jpg`);
+const pro16 = new Productos(15, "rock nacional", 470, 2, "Pescado rabioso", true, 1967, `asset/img/artaud.jpg`);
+const pro17 = new Productos(16, "rock nacional", 380, 2, "Invisible", true, 2008, `asset/img/invisible.jpg`);
+const pro18 = new Productos(17, "rock nacional", 420, 2, "Pappo Blues", true, 1967, `asset/img/pappoblues.jpg`);
 
+
+var cantidad = 0;
+var suma = 0;
 var sum = 0;
 let nav = document.getElementsByClassName("nav-link")
 const body = document.body
 const shopContainer = document.querySelector(`.shoppingCartItemsContainer`)
 
-
+var id = []
 const carrito = []
-
 const productos = []
+precios = []
 
 productos.push(pro1)
 productos.push(pro2)
@@ -83,7 +86,7 @@ localStorage.setItem("productostotal", ajson)
 //funciones
 
 function imprimir() {
-
+    ///imprimir cards
     productos.forEach(e => {
         $("#cardsPro").append(
             `
@@ -95,61 +98,89 @@ function imprimir() {
         <li class="item list-group-item">${e.banda}</li>
         <li class="item list-group-item">Precio : ${e.precio} $</li>
         <a href="#" class="btn btn-dark" id="boton${e.id}" role="button" data-bs-toggle="button">Añadir a carro</a>
-       
+        
         </ul>
 
     </div>
 </div>`)
     });
 
+    ///Funcion agregar carro
     productos.forEach(e => {
         $(`#boton${e.id}`).on(`click`, function() {
 
 
-
-            console.log(`compraste un disco de ${e.banda} su precio es de ${e.precio} $`);
-
-
-            carrito.push(Number(`${e.precio}`))
-
-
-            for (let i = 0; i < carrito.length; i++) {
-
-                sum += carrito.pop();
+            //  STOCK DE PRODUCTOS
+            if (e.stock > 0) {
+                e.stock = e.stock - 1;
+                console.log(` te quedan ${e.stock} en stock ${e.banda}`);
+            } else {
+                alert(`no quedan mas productos de ${e.banda}`)
+                return imprimir
             }
-            console.log(total);
+            carrito.push(e)
+            console.log(`compraste un disco de ${e.banda} su precio es de ${e.precio} $`);
+            console.log(carrito);
+
+
+            //CONNTADOR DE PRODUCTOS
+            id.push(e.id)
+
+            id.forEach(e => {
+                if (e === e) {
+                    cantidad = cantidad + 1
+                } else {
+                    cantidad === 1;
+                }
+            })
+
+
+
+            ///sumaa de precios
+
+            /*for (var i = 0; i <= carrito.length; i++) {
+                precio = carrito[e.precio];
+                suma += precio;
+            }*/
+
+
+            ///SUMA DE PRECIOS
+            precios.push(Number(`${e.precio}`))
+            for (var i = 0; i < precios.length; i++) {
+
+
+                sum += precios.pop();
+            }
+
+
+
+
             $(`.producto`).append(`<h2> ${e.banda} <h2>`);
             $(`.precio`).append(` <h2> ${e.precio}$<h2>`);
             $(`.quitar`).append(`<button type="button" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>`)
-            $(`.shoppingCartTotal`).append(`<h2 clase= "">${sum}$</h2> `)
-            console.log(sum);
+            $(`.shoppingCartTotal`).html(`<h2>${sum}$</h2> `)
+
+
+
+
+
+
+
             let ajson1 = JSON.stringify(carrito)
             localStorage.setItem("carrito", ajson1)
 
             let ajson2 = JSON.stringify(sum)
             localStorage.setItem("total", ajson2)
 
+
+
+
+
         })
     })
+
+
 }
-
-
-/*  const agregarCarro = document.querySelectorAll(`.boton`)
-  agregarCarro.forEach(agregarCarros => {
-      agregarCarros.addEventListener(`click`, clickCompra)
-  })
-
-
-  function clickCompra(event) {
-      const buttom = event.target;
-      const item = buttom.closest(`.item`)
-      console.log(item);
-
-  }*/
-
-
-
-
 
 
 
@@ -247,13 +278,13 @@ function imprimir() {
 
 
 
-
+/*
 let dejson1 = localStorage.getItem("carrito")
 let carro = JSON.parse(dejson1)
 
 let dejson2 = localStorage.getItem("total")
 let total = JSON.parse(dejson2)
-
+*/
 
 
 
@@ -278,10 +309,6 @@ function estilo() {
 
 }
 
-function comprar() {
-
-
-}
 
 
 
