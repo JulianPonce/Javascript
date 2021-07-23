@@ -50,7 +50,7 @@ let nav = document.getElementsByClassName("nav-link")
 const body = document.body
 const shopContainer = document.querySelector(`.shoppingCartItemsContainer`)
 
-var id = []
+var ids = []
 const carrito = []
 const productos = []
 precios = []
@@ -73,6 +73,8 @@ productos.push(pro15)
 productos.push(pro16)
 productos.push(pro17)
 productos.push(pro18)
+
+
 console.log(productos);
 
 
@@ -105,7 +107,7 @@ function imprimir() {
 </div>`)
     });
 
-    ///Funcion agregar carro
+    /////////////    ///Funcion agregar carro      /////////////////////////////////////
     productos.forEach(e => {
         $(`#boton${e.id}`).on(`click`, function() {
 
@@ -124,27 +126,17 @@ function imprimir() {
 
 
             //CONNTADOR DE PRODUCTOS
-            id.push(e.id)
+            ids.push(e.id)
 
-            id.forEach(e => {
-                if (e === e) {
-                    cantidad = cantidad + 1
-                } else {
-                    cantidad === 1;
-                }
-            })
+            var cantidad = ids.reduce((contadorId, id) => {
+                contadorId[id] = (contadorId[id] || 0) + 1;
+                return contadorId
+            }, {});
 
 
+            console.log(cantidad);
 
-            ///sumaa de precios
-
-            /*for (var i = 0; i <= carrito.length; i++) {
-                precio = carrito[e.precio];
-                suma += precio;
-            }*/
-
-
-            ///SUMA DE PRECIOS
+            ///SUMA DE PRECIOS TOTAL
             precios.push(Number(`${e.precio}`))
             for (var i = 0; i < precios.length; i++) {
 
@@ -154,9 +146,10 @@ function imprimir() {
 
 
 
-
+            ////IMPRIMIR CARRITO
             $(`.producto`).append(`<h2> ${e.banda} <h2>`);
             $(`.precio`).append(` <h2> ${e.precio}$<h2>`);
+            $(`.cantidad`).append(`<h2>${cantidad.contadorId}<h2>`)
             $(`.quitar`).append(`<button type="button" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>`)
             $(`.shoppingCartTotal`).html(`<h2>${sum}$</h2> `)
 
@@ -164,7 +157,7 @@ function imprimir() {
 
 
 
-
+            ///GUARDAR DATOS EN JSON
 
             let ajson1 = JSON.stringify(carrito)
             localStorage.setItem("carrito", ajson1)
@@ -185,106 +178,6 @@ function imprimir() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-    productos.forEach(e => {
-        $(`#boton${e.id}`).on(`click`, function() {
-
-
-
-            console.log(`compraste un disco de ${e.banda} su precio es de ${e.precio} $`);
-
-            carrito.push(Number(`${e.precio}`))
-
-
-            for (let i = 0; i < carrito.length; i++) {
-                sum += carrito[i];
-            }
-
-            $("#carrito").append(`</h2>compraste un disco de ${e.banda} su precio es de ${e.precio} $ <h2>`);
-            $("#totalcarro").append(`<h2>Total = ${total} $</h2> `)
-
-            let ajson1 = JSON.stringify(carrito)
-            localStorage.setItem("carrito", ajson1)
-
-            let ajson2 = JSON.stringify(sum)
-            localStorage.setItem("total", ajson2)
-
-        })
-    })
-    productos.forEach(e => {
-        $(`#botonquitar${e.id}`).on(`click`, function() {
-
-            let rest = carrito;
-            for (let j = 0; j < carrito.length; j++) {
-
-
-            }
-
-
-        })
-    })
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-let dejson1 = localStorage.getItem("carrito")
-let carro = JSON.parse(dejson1)
-
-let dejson2 = localStorage.getItem("total")
-let total = JSON.parse(dejson2)
-*/
 
 
 
