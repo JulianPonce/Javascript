@@ -9,7 +9,8 @@ let carrito = JSON.parse(dejson1)
 let dejson2 = localStorage.getItem("total")
 let total = JSON.parse(dejson2)
 
-let sum = 0
+precios = []
+let sum = total
 const body = document.body
 
 /*let div = document.getElementById("tittle")
@@ -59,18 +60,49 @@ function imprimirmenor() {
 
     productos.forEach(e => {
         $(`#boton${e.id}`).on(`click`, function() {
-
-            console.log(`compraste un disco de ${e.banda} su precio es de ${e.precio} $`);
-            carrito.push(Number(`${e.precio}`))
-
-
-            for (let i = 0; i < carrito.length; i++) {
-                sum += carrito[i];
+            //  STOCK DE PRODUCTOS
+            if (e.stock > 0) {
+                e.stock = e.stock - 1;
+                console.log(` te quedan ${e.stock} en stock ${e.banda}`);
+            } else {
+                alert(`no quedan mas productos de ${e.banda}`)
+                return imprimir
             }
+            carrito.push(e)
+            console.log(`compraste un disco de ${e.banda} su precio es de ${e.precio} $`);
+            console.log(carrito);
+
+            precios = []
+            precios.push(Number(`${e.precio}`))
+            for (var i = 0; i < precios.length; i++) {
+
+
+                sum += precios.pop();
+            }
+
+
             $(`.producto`).append(`<h2> ${e.banda} <h2>`);
             $(`.precio`).append(` <h2> ${e.precio}$<h2>`);
+            $(`.quitar`).append(`<button type="button" id="quitar${e.id}" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>`)
+            $(`.shoppingCartTotal`).html(`<h2>${sum}$</h2> `)
 
-            $(`.shoppingCartTotal`).append(`<h2>${total}$</h2>`)
+            $(`#quitar${e.id}`).on(`click`, function() {
+
+                console.log("holaa");
+            })
+
+            $(`.botonvaciar`).on(`click`, function() {
+
+                carrito = []
+                precios = []
+                ids = []
+
+                sum = 0
+                console.log(carrito);
+
+
+
+            })
 
 
             let ajson1 = JSON.stringify(carrito)

@@ -51,9 +51,9 @@ const body = document.body
 const shopContainer = document.querySelector(`.shoppingCartItemsContainer`)
 
 var ids = []
-const carrito = []
+var carrito = []
 const productos = []
-precios = []
+var precios = []
 
 productos.push(pro1)
 productos.push(pro2)
@@ -134,6 +134,14 @@ function imprimir() {
             }, {});
 
 
+            localStorage.setItem("cantidad", JSON.stringify(cantidad))
+
+
+            let imprmirCantidad = JSON.parse(localStorage.getItem("cantidad"))
+                /*
+                  let dejson3 = localStorage.getItem("cantidad")
+                  let cantidadId = JSON.parse(dejson3)*/
+
             console.log(cantidad);
 
             ///SUMA DE PRECIOS TOTAL
@@ -143,22 +151,6 @@ function imprimir() {
 
                 sum += precios.pop();
             }
-
-
-
-            ////IMPRIMIR CARRITO
-            $(`.producto`).append(`<h2> ${e.banda} <h2>`);
-            $(`.precio`).append(` <h2> ${e.precio}$<h2>`);
-            $(`.cantidad`).append(`<h2>${cantidad.contadorId}<h2>`)
-            $(`.quitar`).append(`<button type="button" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>`)
-            $(`.shoppingCartTotal`).html(`<h2>${sum}$</h2> `)
-
-
-
-
-
-            ///GUARDAR DATOS EN JSON
-
             let ajson1 = JSON.stringify(carrito)
             localStorage.setItem("carrito", ajson1)
 
@@ -168,9 +160,77 @@ function imprimir() {
 
 
 
+            function imprimirCarrito() {
+                ////IMPRIMIR CARRITO
 
+
+                $(`#producto`).append(`<h2> ${e.banda} <h2>`);
+                $(`#precio`).append(` <h2> ${e.precio}$<h2>`);
+                $(`#cantidad`).append(`${imprmirCantidad}`)
+                $(`#quitar`).append(`<button type="button" id="quitar${e.id}" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>`)
+                $(`#shoppingCartTotal`).html(`<h2>${sum}$</h2> `)
+
+                carrito.forEach(e => {
+                    $(`#quitar${e.id}`).on(`click`, function(id) {
+
+
+                        let borrar = JSON.parse(localStorage.getItem("carrito"))
+                        let actualizado = borrar.filter(e => e.id != id)
+                        let quitar = localStorage.setItem("carrito", JSON.stringify(actualizado))
+                        console.log(quitar);
+                        $(`.carro`).html(`${quitar}}$`)
+
+                    })
+
+
+                })
+
+
+
+
+
+                $(`.botonvaciar`).on(`click`, function() {
+
+
+                    carrito = []
+                    precios = []
+                    ids = []
+                    sum = 0
+
+
+                    $(`.carro`).html(" ")
+                    $(`.carroTotal`).html(`<h2>${sum}$</h2> `)
+
+
+
+
+
+                    console.log(carrito);
+
+
+
+                })
+
+            }
+            imprimirCarrito()
         })
+
     })
+
+    ///GUARDAR DATOS EN JSON
+
+    let ajson1 = JSON.stringify(carrito)
+    localStorage.setItem("carrito", ajson1)
+
+    let ajson2 = JSON.stringify(sum)
+    localStorage.setItem("total", ajson2)
+
+
+
+
+
+
+
 
 
 }
