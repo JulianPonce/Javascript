@@ -105,7 +105,16 @@ function imprimir() {
 
     </div>
 </div>`)
+
+        $(`boton${e.id}`).on(`Mousemove`, function() {
+            $(`.cards`).style("background-color", "gray")
+        })
     });
+
+
+
+
+
 
     /////////////    ///Funcion agregar carro      /////////////////////////////////////
     productos.forEach(e => {
