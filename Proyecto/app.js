@@ -153,6 +153,9 @@ function imprimir() {
 
             console.log(cantidad);
 
+
+
+
             ///SUMA DE PRECIOS TOTAL
             precios.push(Number(`${e.precio}`))
             for (var i = 0; i < precios.length; i++) {
@@ -179,8 +182,16 @@ function imprimir() {
                 $(`#quitar`).append(`<button type="button" id="quitar${e.id}" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>`)
                 $(`#shoppingCartTotal`).html(`<h2>${sum}$</h2> `)
 
+
+
+
+
+                /////////////////////Bton para sacar de a un producto
+
+
+
                 carrito.forEach(e => {
-                    $(`#quitar${e.id}`).on(`click`, function(id) {
+                    $(`#quitar${e.id}`).on(`click`, function(e) {
 
 
                         let borrar = JSON.parse(localStorage.getItem("carrito"))
@@ -197,7 +208,7 @@ function imprimir() {
 
 
 
-
+                /////////////////////Boton para vaciar carrito
                 $(`.botonvaciar`).on(`click`, function() {
 
 
