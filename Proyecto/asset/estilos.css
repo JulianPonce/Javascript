@@ -19,9 +19,22 @@ a.nav-link:hover {
     color: whitesmoke;
 }
 
+div h1 {
+    color: rgb(230, 52, 52);
+    font-size: 30px;
+    font-family: 'Gill Sans';
+}
+
 div h2 {
     color: burlywood;
     font-size: 20px;
+    letter-spacing: 2px;
+}
+
+div h3 {
+    color: rgb(250, 243, 233);
+    font-size: 18px;
+    letter-spacing: 2px;
 }
 
 h2.total {

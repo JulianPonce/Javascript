@@ -175,14 +175,66 @@ function imprimir() {
             function imprimirCarrito() {
                 ////IMPRIMIR CARRITO
 
+                $(`#carrito`).html(`
+                    <div class="col-4 row-1">
+                    <h2>Producto</h2> 
+                    </div>
+                    <div class="col-2 row-1">
+                    <h2 class="text-truncate">Precio</h2> 
+                    </div>
+                    <div class="col-2 row-1">
+                    <h2>Cantidad</h2>
+                    </div>
+                    <div class="col-3 row-1">
+                    <h2>Quita producto</h2>
+                    </div>
 
-                $(`#producto`).append(`<h2> ${e.banda} <h2>`);
-                $(`#precio`).append(` <h2> ${e.precio}$<h2>`);
-                $(`#cantidad`).append(`${imprmirCantidad}`)
-                $(`#quitar`).append(`<button type="button" id="quitar${e.id}" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>`)
-                $(`#shoppingCartTotal`).html(`<h2>${sum}$</h2> `)
+                    `)
+                for (let key in imprmirCantidad) {
+                    cantidad = `${imprmirCantidad[key]}`
+                }
+                $(`#carro`).append(`
+                <div class="col-4 ">
+                <h3> ${e.banda} </h3> 
+                </div>
+                <div class="col-2 ">
+                <h3 class="text-truncate">${e.precio}$</h3> 
+                </div>
+                <div class="col-2 ">
+                <h3>${cantidad}</h3>
+                </div>
+                <div class="col-4 ">
+                <button type="button" id="quitar${e.id}" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>
+                </div>
+             
+             `)
+
+                $(`#total`).html(`
+             <div class="col-4 ">
+             <h3> TOTAL </h3> 
+             </div>
+             <div class="col-2 ">
+             <h3 class="text-truncate">${sum}$</h3> 
+             </div>
+             <div class="col-2 ">
+             <button class="btn btn-success me-md-2" type="button">Comprar</button>
+             </div>
+             <div class="col-4 ">
+             <button class="botonvaciar btn-secondary" type="button">Vaciar carrito</button>
+             </div>
+          
+          `)
 
 
+
+                /* 
+                    $(`#producto`).append(`<h2> ${e.banda} <h2>`);
+                    $(`#precio`).append(` <h2> ${e.precio}$<h2>`);
+                    for (let key in imprmirCantidad) {
+                        $(`#cantidad`).prepend(`${imprmirCantidad[key]}`)
+                    }
+                    $(`#quitar`).append(`<button type="button" id="quitar${e.id}" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>`)
+                    $(`#shoppingCartTotal`).html(`<h2>${sum}$</h2> `)*/
 
 
 
@@ -218,8 +270,15 @@ function imprimir() {
                     sum = 0
 
 
-                    $(`.carro`).html(" ")
-                    $(`.carroTotal`).html(`<h2>${sum}$</h2> `)
+                    $(`#carro`).html(` `)
+                    $(`#total`).html(` 
+                    
+                    <div class="col-4 ">
+                    <h3> TOTAL </h3> 
+                    </div>
+                    <div class="col-2 ">
+                    <h3 class="text-truncate">${sum}$</h3> 
+                    </div>`)
 
 
 
