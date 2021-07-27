@@ -77,8 +77,8 @@ function imprimirmayor() {
 
             $(`.producto`).append(`<h2> ${e.banda} <h2>`);
             $(`.precio`).append(` <h2> ${e.precio}$<h2>`);
-
-            $(`.shoppingCartTotal`).append(`<h2>${sum}$</h2> `)
+            $(`#quitar`).append(`<button type="button" id="quitar${e.id}" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>`)
+            $(`.shoppingCartTotal`).html(`<h2>${sum}$</h2> `)
 
             let ajson1 = JSON.stringify(carrito)
             localStorage.setItem("carrito", ajson1)

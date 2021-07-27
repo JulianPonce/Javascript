@@ -96,6 +96,9 @@ function imprimirmenor() {
                 carrito = []
                 precios = []
                 ids = []
+                $(`.carro`).html(" ")
+                $(`.carroTotal`).html(`<h2>${sum}$</h2> `)
+
 
                 sum = 0
                 console.log(carrito);
