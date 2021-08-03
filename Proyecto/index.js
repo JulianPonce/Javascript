@@ -73,24 +73,23 @@ $.get(url, function(json, estado) {
 
 
         imprimir(productos)
-
+        agregarCarro(productos)
         console.log(productos);
 
     }
 })
 
-var cantidad = 0;
-var suma = 0;
-var sum = 0;
+let cantidad1 = 0;
+let suma = 0;
+let sum = 0;
 
 const body = document.body
 body.setAttribute("style", "background-color : #EC3E18")
 const shopContainer = document.querySelector(`.shoppingCartItemsContainer`)
 
-var ids = []
-var carrito = []
-
-var precios = []
+let ids = []
+let carrito = []
+let precios = []
 
 /*
 $.get(url, function(request, state) {
@@ -134,31 +133,22 @@ function imprimir(productos) {
             </div>`)
 
         ////ESTILOS DE LAS CARDS CON DOM
-        let carta = document.getElementsByClassName("cards")
-        for (const cards of carta) {
-            cards.setAttribute("style", "background-color:black;width:20rem;margin:1rem;")
-        }
-        let lista = document.getElementsByClassName("card")
-        for (const val of lista) {
-            val.setAttribute("style", "border-color:gray")
-        }
-
-        let list = document.getElementsByClassName("list-group-item")
-        for (const val of list) {
-            val.setAttribute("style", "background-color:black;color:white;border-color:gray")
-        }
+        estilosCards()
     });
 
 
+}
 
 
 
+/////////////    ///FUNCION AGREGAR A CARRO CREANDO EVENTO       /////////////////////////////////////
+function agregarCarro(productos) {
 
-    /////////////    ///FUNCION AGREGAR A CARRO CREANDO EVENTO       /////////////////////////////////////
 
+    ///se pushea el elemento del producto seleccionado
     productos.forEach(e => {
         $(`#boton${e.id}`).on(`click`, function() {
-            ///se pushea el elemento del producto seleccionado
+
             carrito.push(e)
                 //  STOCK DE PRODUCTOS
                 ///restamos una unidad del valor de stock si es igual a cero saltamos la funcion
@@ -187,7 +177,7 @@ function imprimir(productos) {
                 sum += precios.pop()
             }
 
-
+            console.log(sum);
             let ajson1 = JSON.stringify(carrito)
             localStorage.setItem("carrito", ajson1)
 
@@ -196,142 +186,163 @@ function imprimir(productos) {
 
 
 
-            //CONNTADOR DE PRODUCTOS
-            ids.push(e.id)
-
-            var cantidad = ids.reduce((contadorId, id) => {
-                contadorId[id] = (contadorId[id] || 0) + 1;
-                return contadorId
-            }, {});
 
 
-            localStorage.setItem("cantidad", JSON.stringify(cantidad))
+            imprimirCarrito(carrito)
 
 
-            let imprmirCantidad = JSON.parse(localStorage.getItem("cantidad"))
+        })
+
+    })
+
+}
 
 
+//CONNTADOR DE PRODUCTOS
+function contador() {
+    ids.push(e.id)
 
-            //////  /////////IMPRIMIR CARRITO         ////
-
-            function imprimirCarrito() {
-                ////contador de ids
-
-                for (let key in imprmirCantidad) {
-                    var cantidad = Number(`${imprmirCantidad[key]}`)
-
-                }
+    let cantidad1 = ids.reduce((contadorId, id) => {
+        contadorId[id] = (contadorId[id] || 0) + 1;
+        return contadorId
+    }, {});
 
 
+    localStorage.setItem("cantidad", JSON.stringify(cantidad))
 
-                ////IMPRESION DE TITULOS DE CARRO
-                $(`#carrito`).html(`
-                            <div class="col-4 row-1">
-                            <h2>Producto</h2> 
-                            </div>
-                            <div class="col-2 row-1">
-                            <h2 class="text-truncate">Precio</h2> 
-                            </div>
-                            <div class="col-2 row-1">
-                            <h2>Cantidad</h2>
-                            </div>
-                            <div class="col-3 row-1">
-                            <h2>Quita producto</h2>
-                            </div>
 
-                            `)
-                    ///// PRODUCTOS DENTRO DEL CARRO 
+}
+
+
+/////IMPRIMIR CARRO
 
 
 
-                $(`#carro`).append(`
-                            <div class="col-4 ">
-                            <h3> ${e.banda} </h3> 
-                            </div>
-                            <div class="col-2 ">
-                            <h3 class="text-truncate">${e.precio}$</h3> 
-                            </div>
-                            <div class="col-2"id="cantidad">
-                            <h3>${cantidad}</h3>
-                            </div>
-                            <div class="col-4 ">
-                            <button type="button" id="quitar${e.id}" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>
-                            </div>
-                        
-                        `)
+function imprimirCarrito(carrito) {
+    let imprmirCantidad = JSON.parse(localStorage.getItem("cantidad"))
+        ////contador de ids
 
+    for (let key in imprmirCantidad) {
+        var cantidad = Number(`${imprmirCantidad[key]}`)
 
-                console.log(cantidad);
+    }
 
 
 
 
-                ///////////IMPRESION DE TOTAL DE PRECIO LINEA 183
-
-                $(`#total`).html(`
-                            <div class="col-4 ">
-                            <h3> TOTAL </h3> 
-                            </div>
-                            <div class="col-2 ">
-                            <h3 class="text-truncate">${sum}$</h3> 
-                            </div>
-                            <div class="col-2 ">
-                            <button class="btn btn-success me-md-2" type="button">Comprar</button>
-                            </div>
-                            <div class="col-4 ">
-                            <button class="botonvaciar btn-secondary" type="button">Vaciar carrito</button>
-                            </div>
-                        
-                        `)
+    carrito.forEach(e => {
 
 
+        ////IMPRESION DE TITULOS DE CARRO
+        $(`#carrito`).html(`
+                                            <div class="col-4 row-1">
+                                            <h2>Producto</h2> 
+                                            </div>
+                                            <div class="col-2 row-1">
+                                            <h2 class="text-truncate">Precio</h2> 
+                                            </div>
+                                            <div class="col-2 row-1">
+                                            <h2>Cantidad</h2>
+                                            </div>
+                                            <div class="col-3 row-1">
+                                            <h2>Quita producto</h2>
+                                            </div>
+
+                                            `)
+            ///// PRODUCTOS DENTRO DEL CARRO 
 
 
-
-                /////////////////////Bton para sacar de a un producto
-
-
-
-                carrito.forEach(e => {
-                    $(`#quitar${e.id}`).on(`click`, function(e) {
-
-                        carrito[e.id].splice()
-                            /* let borrar = JSON.parse(localStorage.getItem("carrito"))
-                             let actualizado = borrar.filter(e => e.id != id)
-                             let quitar = localStorage.setItem("carrito", JSON.stringify(actualizado))
-                             console.log(quitar);
-                             $(`.carro`).html(`${quitar}$`)*/
-
-                    })
-
-
-                })
+        $(`#carro`).append(`
+                                            <div class="col-4 ">
+                                            <h3> ${e.banda} </h3> 
+                                            </div>
+                                            <div class="col-2 ">
+                                            <h3 class="text-truncate">${e.precio}$</h3> 
+                                            </div>
+                                            <div class="col-2"id="cantidad">
+                                            <h3>${cantidad}</h3>
+                                            </div>
+                                            <div class="col-4 ">
+                                            <button type="button" id="quitar${e.id}" class="d-grid gap-1 col-1 btn-sm  btn btn-outline-danger">x</button>
+                                            </div>
+                                        
+                                        `)
 
 
 
-
-                /////////////////////Boton para vaciar carrito
-                $(`.botonvaciar`).on(`click`, function() {
-
-
-                    carrito = []
-                    precios = []
-                    ids = []
-                    sum = 0
-                    cantidad = 0
+        console.log(cantidad);
 
 
 
 
+        ///////////IMPRESION DE TOTAL DE PRECIO LINEA 183
+
+        $(`#total`).html(`
+                                            <div class="col-4 ">
+                                            <h3> TOTAL </h3> 
+                                            </div>
+                                            <div class="col-2 ">
+                                            <h3 class="text-truncate">${sum}$</h3> 
+                                            </div>
+                                            <div class="col-2 ">
+                                            <button class="btn btn-success me-md-2" type="button">Comprar</button>
+                                            </div>
+                                            <div class="col-4 ">
+                                            <button class="botonvaciar btn-secondary" type="button">Vaciar carrito</button>
+                                            </div>
+                                        
+                                        `)
+
+
+    })
+
+}
+
+
+/////////////////////Bton para sacar de a un producto
+
+
+
+carrito.forEach(e => {
+    $(`#quitar${e.id}`).on(`click`, function(e) {
+        e.stock += 1
+        carrito[e.id].splice()
+            /* let borrar = JSON.parse(localStorage.getItem("carrito"))
+             let actualizado = borrar.filter(e => e.id != id)
+             let quitar = localStorage.setItem("carrito", JSON.stringify(actualizado))
+             console.log(quitar);
+             $(`.carro`).html(`${quitar}$`)*/
+
+    })
+
+
+})
+
+
+
+function vaciar(carrito) {
+    /////////////////////Boton para vaciar carrito
+    $(`.botonvaciar`).on(`click`, function() {
+
+
+        carrito = []
+        precios = []
+        ids = []
+        sum = 0
+        cantidad = 0
+        e.stock += cantidad
 
 
 
 
 
-                    $(`#carro`).html(` `)
-                    $(`#total`).html(` 
+
+
+
+        $(`#carro`).html(` `)
+        $(`#total`).html(` 
                     
-                            <div class="col-4 ">
+                         <div class="col-4 ">
                             <h3> TOTAL </h3> 
                             </div>
                             <div class="col-2 ">
@@ -342,36 +353,55 @@ function imprimir(productos) {
 
 
 
-                    console.log(carrito);
+        console.log(carrito);
 
 
-
-                })
-
-
-            }
-
-
-            imprimirCarrito()
-        })
 
     })
 
 
-    ///GUARDAR DATOS EN JSON
 
-    let ajson1 = JSON.stringify(carrito)
-    localStorage.setItem("carrito", ajson1)
 
-    let ajson2 = JSON.stringify(sum)
-    localStorage.setItem("total", ajson2)
 
+}
+
+vaciar(carrito)
 
 
 
 
 
 
+///GUARDAR DATOS EN JSON
+
+let ajson1 = JSON.stringify(carrito)
+localStorage.setItem("carrito", ajson1)
+
+let ajson2 = JSON.stringify(sum)
+localStorage.setItem("total", ajson2)
 
 
+
+
+
+
+
+
+
+
+
+function estilosCards() {
+    let carta = document.getElementsByClassName("cards")
+    for (const cards of carta) {
+        cards.setAttribute("style", "background-color:black;width:20rem;margin:1rem;")
+    }
+    let lista = document.getElementsByClassName("card")
+    for (const val of lista) {
+        val.setAttribute("style", "border-color:gray")
+    }
+
+    let list = document.getElementsByClassName("list-group-item")
+    for (const val of list) {
+        val.setAttribute("style", "background-color:black;color:white;border-color:gray")
+    }
 }
