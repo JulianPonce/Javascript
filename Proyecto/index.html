@@ -33,92 +33,35 @@
         </div>
     </nav>
     <div id="tittle"></div>
-    <main>
-
-        <div class="container  center mt-5">
-            <div id="cardsPro" class="row">
 
 
 
+    <div class="container  ">
+        <div class="row d-md-flex" id="cards">
+            <!-- Elementos generados a partir del JSON -->
 
-            </div>
+            <main id="items" class="col-sm-8 row d-md-flex justify-content-between "></main>
         </div>
-    </main>
+        <!-- Carrito -->
 
-    <span>  
-         <div class="containershopping  ">
-            <h1 class="text-center">CARRITO</h1>
-            
-           
-            <div id="carrito" class="row">
-            
-            
+        <footer class="col-sm-auto">
+            <h2>Carrito</h2>
+            <!-- Elementos del carrito -->
+            <ul id="carrito" class="list-group"></ul>
+            <hr>
+            <!-- Precio total -->
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+                <p class="text-left">Total: <span id="total"></span>$</p>
+
+                <button id="boton-vaciar" class="btn btn-danger me-md-2" type="button">Vaciar carro</button>
+                <button id="comprar" class="btn btn-success" type="button">Comprar</button>
             </div>
-               
-                  
-                     
-                        <div id="carro" class="row" > 
 
 
+        </footer>
 
-                        </div>
-
-                        <div id="total" class="row" > 
-
-
-
-                        </div>
-
-                    
-        </div>
-                           <!--<div class="col-4">
-                               <div class="shopping-cart-header">
-                                    <h2>Producto</h2>  <div id="producto"class="carro"></div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="shopping-cart-header">
-                                    <h2 class="text-truncate">Precio</h2> <div id="precio"class="carro"></div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="shopping-cart-header">
-                                    <h2>Cantidad</h2><div id="cantidad"class="carro "></div>
-                                </div>
-                            </div>
-                        <div class="col-3 justify-content-md-end">
-                            <div class="shopping-cart-header">
-                                <h2>Quitar producto</h2><div id="quitar"class="carro"></div>
-                            </div>
-                        </div>
-                      
-                       
-                        <div class="shopping-cart-items shoppingCartItemsContainer">
-                        </div>
-                      
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="shopping-cart-total d-flex align-items-center">
-                                    <h2 class="mb-0">Total : </h2>
-                                   
-                                   
-                                    <h2 class="carroTotal" id="shoppingCartTotal"></h2>
-                                    
-                                    
-                                    
-                                </div>
-                                </div>
-                                <div class=" justify-content-md-end">
-                                    <button class="btn btn-success me-md-2" type="button">Comprar</button>
-                                    <button class="botonvaciar btn-secondary" type="button">Vaciar carrito</button>
-                                </div>
-                            </div>
-                               
-                                    </div>
-                                    </div>
-                                -->
-    </span>
-
+    </div>
 
 
 
