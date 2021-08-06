@@ -101,7 +101,7 @@ function renderizarProductos() {
     productos.forEach((e) => {
         // Estructura
         const miNodo = document.createElement('div');
-        miNodo.classList.add('card', 'col-sm-4', 'd-flex', 'justify-content-between');
+        miNodo.classList.add('card', 'col-sm-3', );
         //estilos
         miNodo.setAttribute("style", "background-color:rgba(129, 129, 129, 0.651)")
 
@@ -154,12 +154,11 @@ function renderizarProductos() {
 function añadirProductoAlCarrito(evento) {
     // sumamos nuestro carrito
     carrito.push(evento.target.getAttribute('marcador'))
-        // Calculo el total
+        // funciones creadas a partir de añadir un producto
     calcularTotal();
-    // Actualizamos el carrito 
     renderizarCarrito();
     guardarCarritoEnLocalStorage()
-
+    console.log(carrito);
 }
 
 function renderizarCarrito() {
@@ -189,9 +188,9 @@ function renderizarCarrito() {
 
         // Boton de borrar
         const miBoton = document.createElement('button');
-        miBoton.classList.add('btn', 'btn-danger', 'mx-8', );
+        miBoton.classList.add('btn', 'btn-danger', `d-grid`, `gap-2`, `d-md-flex`, `justify-content-mx-end`);
         miBoton.textContent = 'Quitar';
-        miBoton.style.marginLeft = '20px';
+        miBoton.style.marginLeft = '800px';
         miBoton.dataset.item = item;
         miBoton.addEventListener('click', borrarItemCarrito);
         // Mezclamos nodos
