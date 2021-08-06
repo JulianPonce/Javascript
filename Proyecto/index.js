@@ -93,7 +93,7 @@ const DOMitems = document.querySelector('#items');
 const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
 const DOMbotonVaciar = document.querySelector('#boton-vaciar');
-
+const miLocalStorage = window.localStorage;
 
 /////////////////////FUNCIONES/////////////////////////////////////////////////////
 ////////Funcion para crear las cards
@@ -158,6 +158,7 @@ function añadirProductoAlCarrito(evento) {
     calcularTotal();
     // Actualizamos el carrito 
     renderizarCarrito();
+    guardarCarritoEnLocalStorage()
 
 }
 
@@ -212,6 +213,7 @@ function borrarItemCarrito(evento) {
     renderizarCarrito();
     // Calculamos de nuevo el precio
     calcularTotal();
+    guardarCarritoEnLocalStorage()
 }
 ///Calcula el precio total teniendo en cuenta los productos repetidos
 
@@ -242,6 +244,7 @@ function vaciarCarrito() {
     // Renderizamos los cambios
     renderizarCarrito();
     calcularTotal();
+    localStorage.clear();
 }
 
 // Eventos
@@ -251,11 +254,20 @@ DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 renderizarProductos();
 
 
+function guardarCarritoEnLocalStorage() {
+    miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+function cargarCarritoDeLocalStorage() {
+    // ¿Existe un carrito previo guardado en LocalStorage?
+    if (miLocalStorage.getItem('carrito') !== null) {
+        // Carga la información
+        carrito = JSON.parse(miLocalStorage.getItem('carrito'));
+    }
+}
 
 
-
-
-
+cargarCarritoDeLocalStorage()
 
 
 
