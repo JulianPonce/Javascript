@@ -97,7 +97,7 @@ const miLocalStorage = window.localStorage;
 
 /////////////////////FUNCIONES/////////////////////////////////////////////////////
 ////////Funcion para crear las cards
-function renderizarProductos() {
+function ProductosCards() {
     productos.forEach((e) => {
         // Estructura
         const miNodo = document.createElement('div');
@@ -156,12 +156,12 @@ function añadirProductoAlCarrito(evento) {
     carrito.push(evento.target.getAttribute('marcador'))
         // funciones creadas a partir de añadir un producto
     calcularTotal();
-    renderizarCarrito();
+    ImprimirCarrito();
     guardarCarritoEnLocalStorage()
     console.log(carrito);
 }
 
-function renderizarCarrito() {
+function ImprimirCarrito() {
     // Vaciamos todo el html
     DOMcarrito.textContent = '';
     // Quitamos los duplicados
@@ -181,6 +181,7 @@ function renderizarCarrito() {
         // Creamos el nodo del item del carrito
         const miNodo = document.createElement('li');
         miNodo.classList.add('list-group-item', 'text-right', 'mx-15');
+
         miNodo.textContent = ` ${numeroUnidadesItem} unidades de ${miItem[0].banda} - ${miItem[0].precio}$`;
 
         const miImagenCarro = document.createElement('img');
@@ -209,7 +210,7 @@ function borrarItemCarrito(evento) {
         return carritoId !== id;
     });
     // volvemos a renderizar
-    renderizarCarrito();
+    ImprimirCarrito();
     // Calculamos de nuevo el precio
     calcularTotal();
     guardarCarritoEnLocalStorage()
@@ -241,7 +242,7 @@ function vaciarCarrito() {
     // Limpiamos los productos guardados
     carrito = [];
     // Renderizamos los cambios
-    renderizarCarrito();
+    ImprimirCarrito();
     calcularTotal();
     localStorage.clear();
 }
@@ -250,7 +251,7 @@ function vaciarCarrito() {
 DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 
 // Inicio
-renderizarProductos();
+ProductosCards();
 
 
 function guardarCarritoEnLocalStorage() {
@@ -303,14 +304,9 @@ cargarCarritoDeLocalStorage()
 
 
 
-        /////////////    ///FUNCION AGREGAR A CARRO CREANDO EVENTO       /////////////////////////////////////
+        
 
-        $(`#boton`).on("click", function() {
-
-            carrito.push(e)
-            console.log(carrito);
-        })
-
+       
     }
 
     imprimir()
