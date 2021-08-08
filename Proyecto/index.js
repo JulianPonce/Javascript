@@ -95,8 +95,160 @@ const DOMtotal = document.querySelector('#total');
 const DOMbotonVaciar = document.querySelector('#boton-vaciar');
 const miLocalStorage = window.localStorage;
 
-/////////////////////FUNCIONES/////////////////////////////////////////////////////
-////////Funcion para crear las cards
+/////const para generar orden
+const mayor = document.getElementById("mayor")
+const menor = document.getElementById("menor")
+
+
+// Eventos
+DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+menor.addEventListener(`click`, menorPrecio)
+mayor.addEventListener(`click`, mayorPrecio)
+    /////////////////////FUNCIONES/////////////////////////////////////////////////////
+
+/////Generamos la lista de productos ordenada demayorprecio a menor
+
+
+
+//////funcion para imprimir cards de mayor a menor precio
+function mayorPrecio() {
+    let listamayorprecio = productos.sort((a, b) => {
+        if (a.precio > b.precio) {
+            return -1;
+        }
+        if (a.precio < b.precio) {
+            return 1;
+
+        }
+        return 0
+
+    });
+
+    console.log(listamayorprecio);
+
+    listamayorprecio.forEach((e) => {
+        // Estructura
+        const miNodo = document.createElement('div');
+        miNodo.classList.add('card', 'col-sm-3', );
+        //estilos
+        miNodo.setAttribute("style", "background-color:rgba(129, 129, 129, 0.651)")
+
+        // Body
+        const miNodoCardBody = document.createElement('div');
+        miNodoCardBody.classList.add('card-body', );
+        //estilos
+        miNodoCardBody.setAttribute("style", "background-color:gray")
+
+        // Titulo 
+        const miNodoTitle = document.createElement('h5');
+        miNodoTitle.classList.add('card-title');
+        //estilos
+        miNodoTitle.setAttribute("style", "color:black")
+        miNodoTitle.textContent = e.banda;
+
+        // Imagen
+        const miNodoImagen = document.createElement('img');
+        miNodoImagen.classList.add('img-fluid');
+        miNodoImagen.setAttribute('src', e.img);
+
+        // Precio
+        const miNodoPrecio = document.createElement('p');
+        miNodoPrecio.classList.add('card-text');
+        miNodoPrecio.textContent = `Precio:` + ` ` + e.precio + ` ` + '$';
+
+        // Boton 
+        const miNodoBoton = document.createElement('button');
+        miNodoBoton.classList.add('btn', 'btn-dark');
+        miNodoBoton.textContent = 'Añadir al carro';
+        miNodoBoton.setAttribute('marcador', e.id);
+        miNodoBoton.addEventListener('click', añadirProductoAlCarrito);
+        // Insertamos
+        miNodoCardBody.appendChild(miNodoImagen);
+        miNodoCardBody.appendChild(miNodoTitle);
+        miNodoCardBody.appendChild(miNodoPrecio);
+        miNodoCardBody.appendChild(miNodoBoton);
+        miNodo.appendChild(miNodoCardBody);
+        DOMitems.appendChild(miNodo);
+
+    });
+
+
+
+
+}
+
+
+
+
+
+function menorPrecio() {
+    let listamenorprecio = productos.sort((a, b) => {
+        if (a.precio > b.precio) {
+            return 1;
+        }
+        if (a.precio < b.precio) {
+            return -1;
+
+        }
+        return 0
+
+    });
+
+    console.log(listamenorprecio);
+
+
+    listamenorprecio.forEach((e) => {
+        // Estructura
+        const miNodo = document.createElement('div');
+        miNodo.classList.add('card', 'col-sm-3', );
+        //estilos
+        miNodo.setAttribute("style", "background-color:rgba(129, 129, 129, 0.651)")
+
+        // Body
+        const miNodoCardBody = document.createElement('div');
+        miNodoCardBody.classList.add('card-body', );
+        //estilos
+        miNodoCardBody.setAttribute("style", "background-color:gray")
+
+        // Titulo 
+        const miNodoTitle = document.createElement('h5');
+        miNodoTitle.classList.add('card-title');
+        //estilos
+        miNodoTitle.setAttribute("style", "color:black")
+        miNodoTitle.textContent = e.banda;
+
+        // Imagen
+        const miNodoImagen = document.createElement('img');
+        miNodoImagen.classList.add('img-fluid');
+        miNodoImagen.setAttribute('src', e.img);
+
+        // Precio
+        const miNodoPrecio = document.createElement('p');
+        miNodoPrecio.classList.add('card-text');
+        miNodoPrecio.textContent = `Precio:` + ` ` + e.precio + ` ` + '$';
+
+        // Boton 
+        const miNodoBoton = document.createElement('button');
+        miNodoBoton.classList.add('btn', 'btn-dark');
+        miNodoBoton.textContent = 'Añadir al carro';
+        miNodoBoton.setAttribute('marcador', e.id);
+        miNodoBoton.addEventListener('click', añadirProductoAlCarrito);
+        // Insertamos
+        miNodoCardBody.appendChild(miNodoImagen);
+        miNodoCardBody.appendChild(miNodoTitle);
+        miNodoCardBody.appendChild(miNodoPrecio);
+        miNodoCardBody.appendChild(miNodoBoton);
+        miNodo.appendChild(miNodoCardBody);
+        DOMitems.appendChild(miNodo);
+
+    });
+
+
+
+
+}
+
+
 function ProductosCards() {
     productos.forEach((e) => {
         // Estructura
@@ -247,8 +399,6 @@ function vaciarCarrito() {
     localStorage.clear();
 }
 
-// Eventos
-DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 
 // Inicio
 ProductosCards();
