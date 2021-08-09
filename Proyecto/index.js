@@ -428,7 +428,7 @@ function calcularTotal() {
 
 
 
-
+////Funciones para los eventos de vaciar y comprar
 
 function vaciarCarrito() {
     // Limpiamos los productos guardados
@@ -440,9 +440,13 @@ function vaciarCarrito() {
 }
 
 function comprarProductos() {
-    alert(`Gracias por su compra de un total de ${total} $`)
-    vaciarCarrito()
-    console.log(total);
+    if (total === 0) {
+        return comprarProductos
+    } else {
+        alert(`Gracias por su compra de un total de ${total} $`)
+        vaciarCarrito()
+        console.log(total);
+    }
 }
 
 
