@@ -38,11 +38,11 @@ const pro10 = new Productos(9, "jazz", 480, 2, "Thelonious monk", true, 1949, `a
 const pro11 = new Productos(10, "rock", 380, 2, "Artick Monkeys", true, 2008, `asset/img/artick-monkeys.jpg`);
 const pro12 = new Productos(11, "rock", 380, 2, "Jimy Hendrix", true, 1967, `asset/img/hendrix.jpg`);
 const pro13 = new Productos(12, "rock nacional", 450, 2, "Charly Garcia", true, 2006, `asset/img/charly.jpg`);
-const pro14 = new Productos(13, "rock prog", 540, 1, "Yes", true, 1949, `asset/img/yes.jpg`);
-const pro15 = new Productos(14, "jazz", 400, 2, "The dave brubeck quartet", true, 2008, `asset/img/takefive.jpg`);
-const pro16 = new Productos(15, "rock nacional", 470, 2, "Pescado rabioso", true, 1967, `asset/img/artaud.jpg`);
-const pro17 = new Productos(16, "rock nacional", 380, 2, "Invisible", true, 2008, `asset/img/invisible.jpg`);
-const pro18 = new Productos(17, "rock nacional", 420, 2, "Pappo Blues", true, 1967, `asset/img/pappoblues.jpg`);
+const pro14 = new Productos(13, "rock prog", 540, 1, "Yes", true, 1972, `asset/img/yes.jpg`);
+const pro15 = new Productos(14, "jazz", 400, 2, "The dave brubeck quartet", true, 1954, `asset/img/takefive.jpg`);
+const pro16 = new Productos(15, "rock nacional", 470, 2, "Pescado rabioso", true, 1971, `asset/img/artaud.jpg`);
+const pro17 = new Productos(16, "rock nacional", 380, 2, "Invisible", true, 1974, `asset/img/invisible.jpg`);
+const pro18 = new Productos(17, "rock nacional", 420, 2, "Pappo Blues", true, 1972, `asset/img/pappoblues.jpg`);
 
 const productos = []
 productos.push(pro1)
@@ -104,7 +104,14 @@ const menor = document.getElementById("menor")
 DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 menor.addEventListener(`click`, menorPrecio)
 mayor.addEventListener(`click`, mayorPrecio)
-    /////////////////////FUNCIONES/////////////////////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////FUNCIONES/////////////////////////////////////////////////////
 
 /////Generamos la lista de productos ordenada demayorprecio a menor
 
@@ -142,21 +149,26 @@ function mayorPrecio(e) {
         miNodoCardBody.setAttribute("style", "background-color:gray")
 
         // Titulo 
-        const miNodoTitle = document.createElement('h5');
-        miNodoTitle.classList.add('card-title');
+        const miTitle = document.createElement('h5');
+        miTitle.classList.add('card-title');
         //estilos
-        miNodoTitle.setAttribute("style", "color:black")
-        miNodoTitle.textContent = e.banda;
-
+        miTitle.setAttribute("style", "color:black")
+        miTitle.textContent = e.banda;
+        ///año
+        const miAño = document.createElement('p');
+        miAño.classList.add('card-title');
+        //estilos
+        miAño.setAttribute("style", "color:black")
+        miAño.textContent = `Año:` + ` ` + e.año;
         // Imagen
-        const miNodoImagen = document.createElement('img');
-        miNodoImagen.classList.add('img-fluid');
-        miNodoImagen.setAttribute('src', e.img);
+        const miImagen = document.createElement('img');
+        miImagen.classList.add('img-fluid');
+        miImagen.setAttribute('src', e.img);
 
         // Precio
-        const miNodoPrecio = document.createElement('p');
-        miNodoPrecio.classList.add('card-text');
-        miNodoPrecio.textContent = `Precio:` + ` ` + e.precio + ` ` + '$';
+        const miPrecio = document.createElement('p');
+        miPrecio.classList.add('card-text');
+        miPrecio.textContent = `Precio:` + ` ` + e.precio + ` ` + '$';
 
         // Boton 
         const miNodoBoton = document.createElement('button');
@@ -165,10 +177,13 @@ function mayorPrecio(e) {
         miNodoBoton.setAttribute('marcador', e.id);
         miNodoBoton.addEventListener('click', añadirProductoAlCarrito);
         // Insertamos
-        miNodoCardBody.appendChild(miNodoImagen);
-        miNodoCardBody.appendChild(miNodoTitle);
-        miNodoCardBody.appendChild(miNodoPrecio);
+        miNodoCardBody.appendChild(miImagen);
+        miNodoCardBody.appendChild(miTitle);
+        miNodoCardBody.appendChild(miAño);
+        miNodoCardBody.appendChild(miPrecio);
+
         miNodoCardBody.appendChild(miNodoBoton);
+
         miNodo.appendChild(miNodoCardBody);
         DOMitems.appendChild(miNodo);
 
@@ -213,21 +228,26 @@ function menorPrecio() {
         miNodoCardBody.setAttribute("style", "background-color:gray")
 
         // Titulo 
-        const miNodoTitle = document.createElement('h5');
-        miNodoTitle.classList.add('card-title');
+        const miTitle = document.createElement('h5');
+        miTitle.classList.add('card-title');
         //estilos
-        miNodoTitle.setAttribute("style", "color:black")
-        miNodoTitle.textContent = e.banda;
-
+        miTitle.setAttribute("style", "color:black")
+        miTitle.textContent = e.banda;
+        ///año
+        const miAño = document.createElement('p');
+        miAño.classList.add('card-title');
+        //estilos
+        miAño.setAttribute("style", "color:black")
+        miAño.textContent = `Año:` + ` ` + e.año;
         // Imagen
-        const miNodoImagen = document.createElement('img');
-        miNodoImagen.classList.add('img-fluid');
-        miNodoImagen.setAttribute('src', e.img);
+        const miImagen = document.createElement('img');
+        miImagen.classList.add('img-fluid');
+        miImagen.setAttribute('src', e.img);
 
         // Precio
-        const miNodoPrecio = document.createElement('p');
-        miNodoPrecio.classList.add('card-text');
-        miNodoPrecio.textContent = `Precio:` + ` ` + e.precio + ` ` + '$';
+        const miPrecio = document.createElement('p');
+        miPrecio.classList.add('card-text');
+        miPrecio.textContent = `Precio:` + ` ` + e.precio + ` ` + '$';
 
         // Boton 
         const miNodoBoton = document.createElement('button');
@@ -236,13 +256,15 @@ function menorPrecio() {
         miNodoBoton.setAttribute('marcador', e.id);
         miNodoBoton.addEventListener('click', añadirProductoAlCarrito);
         // Insertamos
-        miNodoCardBody.appendChild(miNodoImagen);
-        miNodoCardBody.appendChild(miNodoTitle);
-        miNodoCardBody.appendChild(miNodoPrecio);
+        miNodoCardBody.appendChild(miImagen);
+        miNodoCardBody.appendChild(miTitle);
+        miNodoCardBody.appendChild(miAño);
+        miNodoCardBody.appendChild(miPrecio);
+
         miNodoCardBody.appendChild(miNodoBoton);
+
         miNodo.appendChild(miNodoCardBody);
         DOMitems.appendChild(miNodo);
-
     });
 
 
@@ -267,21 +289,26 @@ function ProductosCards() {
         miNodoCardBody.setAttribute("style", "background-color:gray")
 
         // Titulo 
-        const miNodoTitle = document.createElement('h5');
-        miNodoTitle.classList.add('card-title');
+        const miTitle = document.createElement('h5');
+        miTitle.classList.add('card-title');
         //estilos
-        miNodoTitle.setAttribute("style", "color:black")
-        miNodoTitle.textContent = e.banda;
-
+        miTitle.setAttribute("style", "color:black")
+        miTitle.textContent = e.banda;
+        ///año
+        const miAño = document.createElement('p');
+        miAño.classList.add('card-title');
+        //estilos
+        miAño.setAttribute("style", "color:black")
+        miAño.textContent = `Año:` + ` ` + e.año;
         // Imagen
-        const miNodoImagen = document.createElement('img');
-        miNodoImagen.classList.add('img-fluid');
-        miNodoImagen.setAttribute('src', e.img);
+        const miImagen = document.createElement('img');
+        miImagen.classList.add('img-fluid');
+        miImagen.setAttribute('src', e.img);
 
         // Precio
-        const miNodoPrecio = document.createElement('p');
-        miNodoPrecio.classList.add('card-text');
-        miNodoPrecio.textContent = `Precio:` + ` ` + e.precio + ` ` + '$';
+        const miPrecio = document.createElement('p');
+        miPrecio.classList.add('card-text');
+        miPrecio.textContent = `Precio:` + ` ` + e.precio + ` ` + '$';
 
         // Boton 
         const miNodoBoton = document.createElement('button');
@@ -290,10 +317,13 @@ function ProductosCards() {
         miNodoBoton.setAttribute('marcador', e.id);
         miNodoBoton.addEventListener('click', añadirProductoAlCarrito);
         // Insertamos
-        miNodoCardBody.appendChild(miNodoImagen);
-        miNodoCardBody.appendChild(miNodoTitle);
-        miNodoCardBody.appendChild(miNodoPrecio);
+        miNodoCardBody.appendChild(miImagen);
+        miNodoCardBody.appendChild(miTitle);
+        miNodoCardBody.appendChild(miAño);
+        miNodoCardBody.appendChild(miPrecio);
+
         miNodoCardBody.appendChild(miNodoBoton);
+
         miNodo.appendChild(miNodoCardBody);
         DOMitems.appendChild(miNodo);
 
@@ -337,10 +367,8 @@ function ImprimirCarrito() {
         const miNodo = document.createElement('li');
         miNodo.classList.add('list-group-item', 'text-right', 'mx-15');
 
-        miNodo.textContent = ` ${numeroUnidadesItem} unidades de ${miItem[0].banda} - ${miItem[0].precio}$`;
+        miNodo.textContent = `${miItem[0].img} ${numeroUnidadesItem} unidades de ${miItem[0].banda} - ${miItem[0].precio}$`;
 
-        const miImagenCarro = document.createElement('img');
-        miImagenCarro.classList.add('img-fluid');
 
         // Boton de borrar
         const miBoton = document.createElement('button');
