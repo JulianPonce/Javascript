@@ -1,5 +1,5 @@
 body {
-    color: rgb(2, 39, 117);
+    color: rgb(23, 86, 223);
 }
 
 div.card {
@@ -61,7 +61,7 @@ a.nav-link {
 }
 
 a.nav-link:hover {
-    color: rgb(146, 15, 15);
+    color: rgb(255, 255, 255);
 }
 
 div h1 {
@@ -79,11 +79,11 @@ div h2 {
 }
 
 div h3 {
-    color: rgb(250, 243, 233);
+    color: rgb(255, 29, 29);
     font-size: 18px;
     letter-spacing: 2px;
 }
 
 h2.total {
-    color: rgb(37, 126, 44);
+    color: rgb(161, 87, 190);
 }

@@ -98,12 +98,13 @@ const miLocalStorage = window.localStorage;
 /////const para generar orden
 const mayor = document.getElementById("mayor")
 const menor = document.getElementById("menor")
-
+const dark = document.getElementById("dark")
 
 // Eventos
 DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 menor.addEventListener(`click`, menorPrecio)
 mayor.addEventListener(`click`, mayorPrecio)
+dark.addEventListener(`click`, darkMode)
 
 
 
@@ -199,6 +200,7 @@ function mayorPrecio(e) {
 
 
 function menorPrecio() {
+
     let listamenorprecio = productos.sort((a, b) => {
         if (a.precio > b.precio) {
             return 1;
@@ -213,7 +215,8 @@ function menorPrecio() {
 
     console.log(listamenorprecio);
 
-    DOMitems.innerHTML = ` `
+
+
     listamenorprecio.forEach((e) => {
         // Estructura
         const miNodo = document.createElement('div');
@@ -363,6 +366,8 @@ function ImprimirCarrito() {
             // si repite id sumamos 1 a la cantidad total
             return itemId === item ? total += 1 : total;
         }, 0);
+
+
         // Creamos el nodo del item del carrito
         const miNodo = document.createElement('li');
         miNodo.classList.add('list-group-item', 'text-right', 'mx-15');
@@ -432,7 +437,7 @@ function vaciarCarrito() {
 
 
 // Inicio
-ProductosCards();
+
 
 
 function guardarCarritoEnLocalStorage() {
@@ -447,7 +452,7 @@ function cargarCarritoDeLocalStorage() {
     }
 }
 
-
+ProductosCards()
 cargarCarritoDeLocalStorage()
 
 
@@ -500,7 +505,21 @@ cargarCarritoDeLocalStorage()
 function estilosCards() {
 
     const body = document.body
-    body.setAttribute("style", "background-color : rgb(2, 39, 117)")
+    body.setAttribute("style", "background-color : rgb(23, 86, 223)")
+
+    let carta = document.getElementsByClassName("container")
+    for (const cards of carta) {
+        cards.setAttribute("style", "background-color: rgb(173, 173, 173)")
+    }
+
+
+
+}
+
+
+function darkMode() {
+    const body = document.body
+    body.setAttribute("style", "background-color : rgb(44, 0, 61)")
 
     let carta = document.getElementsByClassName("container")
     for (const cards of carta) {
