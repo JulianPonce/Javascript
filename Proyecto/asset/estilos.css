@@ -84,6 +84,7 @@ div h3 {
     letter-spacing: 2px;
 }
 
-h2.total {
-    color: rgb(161, 87, 190);
+p.total {
+    color: rgb(0, 150, 67);
+    font-size: 20px;
 }

@@ -119,8 +119,8 @@ dark.addEventListener(`click`, darkMode)
 
 
 //////funcion para imprimir cards de mayor a menor precio
-function mayorPrecio(e) {
-
+function mayorPrecio(event) {
+    event.preventDefault()
 
     let listamayorprecio = productos.sort((a, b) => {
         if (a.precio > b.precio) {
@@ -199,7 +199,9 @@ function mayorPrecio(e) {
 
 
 
-function menorPrecio() {
+function menorPrecio(event) {
+
+    event.preventDefault()
 
     let listamenorprecio = productos.sort((a, b) => {
         if (a.precio > b.precio) {
@@ -216,7 +218,7 @@ function menorPrecio() {
     console.log(listamenorprecio);
 
 
-
+    DOMitems.innerHTML = ` `
     listamenorprecio.forEach((e) => {
         // Estructura
         const miNodo = document.createElement('div');
@@ -372,13 +374,13 @@ function ImprimirCarrito() {
         const miNodo = document.createElement('li');
         miNodo.classList.add('list-group-item', 'text-right', 'mx-15');
 
-        miNodo.textContent = `${miItem[0].img} ${numeroUnidadesItem} unidades de ${miItem[0].banda} - ${miItem[0].precio}$`;
+        miNodo.textContent = `${miItem[0].img} ${numeroUnidadesItem} unidades de ${miItem[0].banda}  ${miItem[0].precio}$`;
 
 
         // Boton de borrar
         const miBoton = document.createElement('button');
         miBoton.classList.add('btn', 'btn-danger', `d-grid`, `gap-2`, `d-md-flex`, `justify-content-mx-end`);
-        miBoton.textContent = 'Quitar';
+        miBoton.textContent = 'Quitar producto';
         miBoton.style.marginLeft = '800px';
         miBoton.dataset.item = item;
         miBoton.addEventListener('click', borrarItemCarrito);
@@ -420,6 +422,7 @@ function calcularTotal() {
     });
     // Renderizamos el precio en el HTML
     DOMtotal.textContent = total.toFixed(2);
+    DOMtotal.setAttribute("style", "color:rgb(0, 150, 67)")
 }
 
 
@@ -459,46 +462,13 @@ cargarCarritoDeLocalStorage()
 
 
 
-/*
-    function imprimir() {
-
-
-
-        ///IMPRIMIR CARDS CON JQUERY
-        productos.forEach(e => {
-            $("#cardsPro").append(
-                `
-            <div class="cards" style="width: 20rem;">
-            <img src="${e.img}" class="item card-img-top" alt="...">
-            <div class="card" style="width: 18.5rem;">
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">${e.genero}</li>
-            <li class="item list-group-item">${e.banda}</li>
-            <li class="item list-group-item">Precio : ${e.precio} $</li>
-            <a href="#" class="btn btn-dark" id="boton" role="button" marcador="${e.id}" data-bs-toggle="button">Añadir a carro</a>
-            
-            </ul>
-
-                </div>
-                </div>`)
-
-            ////ESTILOS DE LAS CARDS CON DOM
-            estilosCards()
-
-        });
 
 
 
 
-        
-
-       
-    }
-
-    imprimir()
 
 
-    */
+
 
 
 
@@ -517,7 +487,8 @@ function estilosCards() {
 }
 
 
-function darkMode() {
+function darkMode(event) {
+    event.preventDefault()
     const body = document.body
     body.setAttribute("style", "background-color : rgb(44, 0, 61)")
 
