@@ -99,13 +99,13 @@ const miLocalStorage = window.localStorage;
 const mayor = document.getElementById("mayor")
 const menor = document.getElementById("menor")
 const dark = document.getElementById("dark")
-
-// Eventos
+const comprar = document.getElementById("comprar")
+    // Eventos
 DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 menor.addEventListener(`click`, menorPrecio)
 mayor.addEventListener(`click`, mayorPrecio)
 dark.addEventListener(`click`, darkMode)
-
+comprar.addEventListener(`click`, comprarProductos)
 
 
 
@@ -419,6 +419,7 @@ function calcularTotal() {
             return itemBaseDatos.id === parseInt(item);
         });
         total = total + miItem[0].precio;
+
     });
     // Renderizamos el precio en el HTML
     DOMtotal.textContent = total.toFixed(2);
@@ -438,8 +439,11 @@ function vaciarCarrito() {
     localStorage.clear();
 }
 
-
-// Inicio
+function comprarProductos() {
+    alert(`Gracias por su compra de un total de ${total} $`)
+    vaciarCarrito()
+    console.log(total);
+}
 
 
 
