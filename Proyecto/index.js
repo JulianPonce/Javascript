@@ -85,7 +85,7 @@ $.get(url, function(json, estado) {
 
 
 
-const shopContainer = document.querySelector(`.shoppingCartItemsContainer`)
+
 
 let carrito = [];
 let total = 0;
@@ -111,7 +111,9 @@ mayor.addEventListener(`click`, mayorPrecio)
 
 
 //////funcion para imprimir cards de mayor a menor precio
-function mayorPrecio() {
+function mayorPrecio(e) {
+
+
     let listamayorprecio = productos.sort((a, b) => {
         if (a.precio > b.precio) {
             return -1;
@@ -125,7 +127,7 @@ function mayorPrecio() {
     });
 
     console.log(listamayorprecio);
-
+    DOMitems.innerHTML = ` `
     listamayorprecio.forEach((e) => {
         // Estructura
         const miNodo = document.createElement('div');
@@ -196,7 +198,7 @@ function menorPrecio() {
 
     console.log(listamenorprecio);
 
-
+    DOMitems.innerHTML = ` `
     listamenorprecio.forEach((e) => {
         // Estructura
         const miNodo = document.createElement('div');
@@ -250,6 +252,7 @@ function menorPrecio() {
 
 
 function ProductosCards() {
+
     productos.forEach((e) => {
         // Estructura
         const miNodo = document.createElement('div');
@@ -304,9 +307,9 @@ function ProductosCards() {
 // Evento para añadir un producto al carrito de la compra
 
 function añadirProductoAlCarrito(evento) {
-    // sumamos nuestro carrito
+    // añadimos producto al carrito
     carrito.push(evento.target.getAttribute('marcador'))
-        // funciones creadas a partir de añadir un producto
+        // ejecutamos las funciones correspondiente al carro
     calcularTotal();
     ImprimirCarrito();
     guardarCarritoEnLocalStorage()
@@ -316,18 +319,18 @@ function añadirProductoAlCarrito(evento) {
 function ImprimirCarrito() {
     // Vaciamos todo el html
     DOMcarrito.textContent = '';
-    // Quitamos los duplicados
+    // Quitamos los duplicados con la propiedad newset 
     const carritoSinDuplicados = [...new Set(carrito)];
-    // Generamos los Nodos a partir de carrito
+    // for each para generar carrito
     carritoSinDuplicados.forEach((item) => {
-        // Obtenemos el item que necesitamos de la variable base de datos
+        // obtenemos el item que necesitamos
         const miItem = productos.filter((itemBaseDatos) => {
-            // ¿Coincide las id? Solo puede existir un caso
+            //y lo comparamoos si existe un id igual dentro del carro
             return itemBaseDatos.id === parseInt(item);
         });
-        // Cuenta el número de veces que se repite el producto
+
         const numeroUnidadesItem = carrito.reduce((total, itemId) => {
-            // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
+            // si repite id sumamos 1 a la cantidad total
             return itemId === item ? total += 1 : total;
         }, 0);
         // Creamos el nodo del item del carrito
@@ -361,13 +364,13 @@ function borrarItemCarrito(evento) {
     carrito = carrito.filter((carritoId) => {
         return carritoId !== id;
     });
-    // volvemos a renderizar
+
     ImprimirCarrito();
     // Calculamos de nuevo el precio
     calcularTotal();
     guardarCarritoEnLocalStorage()
 }
-///Calcula el precio total teniendo en cuenta los productos repetidos
+///Calcula el precio total 
 
 
 
