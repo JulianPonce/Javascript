@@ -104,7 +104,7 @@ const comprar = document.getElementById("comprar")
 DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 menor.addEventListener(`click`, menorPrecio)
 mayor.addEventListener(`click`, mayorPrecio)
-dark.addEventListener(`click`, darkMode)
+dark.addEventListener(`click`, cambiarEstilo)
 comprar.addEventListener(`click`, comprarProductos)
 
 
@@ -478,25 +478,29 @@ cargarCarritoDeLocalStorage()
 
 
 
+if (localStorage.getItem("estilo") == "lightmode") {
+    lightMode()
+} else if (localStorage.getItem("estilo") == "darkmode") {
+    darkMode()
+}
 
-
-function estilosCards() {
+function lightMode() {
 
     const body = document.body
-    body.setAttribute("style", "background-color : rgb(23, 86, 223)")
+    body.setAttribute("style", "background-color : rgb(91, 110, 151)")
 
     let carta = document.getElementsByClassName("container")
     for (const cards of carta) {
         cards.setAttribute("style", "background-color: rgb(173, 173, 173)")
     }
 
-
+    localStorage.setItem("estilo", "lightmode")
 
 }
 
 
-function darkMode(event) {
-    event.preventDefault()
+function darkMode() {
+
     const body = document.body
     body.setAttribute("style", "background-color : rgb(44, 0, 61)")
 
@@ -504,9 +508,19 @@ function darkMode(event) {
     for (const cards of carta) {
         cards.setAttribute("style", "background-color: black")
     }
-
+    localStorage.setItem("estilo", "darkmode")
 
 
 }
 
-estilosCards()
+function cambiarEstilo() {
+
+    if (localStorage.getItem("estilo") == "lightmode") {
+        darkMode()
+    } else {
+        if (localStorage.getItem("estilo") == "darkmode") {
+            lightMode()
+        }
+    }
+
+}

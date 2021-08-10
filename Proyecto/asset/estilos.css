@@ -1,5 +1,5 @@
 body {
-    color: rgb(23, 86, 223);
+    color: rgb(91, 110, 151);
 }
 
 div.card {
@@ -79,7 +79,7 @@ div h2 {
 }
 
 div h3 {
-    color: rgb(255, 29, 29);
+    color: #ff2e2e;
     font-size: 18px;
     letter-spacing: 2px;
 }
