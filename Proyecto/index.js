@@ -436,7 +436,7 @@ function vaciarCarrito() {
     // Renderizamos los cambios
     ImprimirCarrito();
     calcularTotal();
-    removeItem(carrito)
+    localStorage.removeItem(carrito)
 }
 
 function comprarProductos() {
