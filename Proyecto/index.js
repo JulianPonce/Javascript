@@ -475,7 +475,7 @@ cargarCarritoDeLocalStorage()
 /////Bton dark mode y light mode
 
 
-
+lightMode()
 
 
 if (localStorage.getItem("estilo") == "lightmode") {
@@ -513,8 +513,8 @@ function darkMode() {
 
 }
 
-function cambiarEstilo() {
-
+function cambiarEstilo(event) {
+    event.preventDefault()
     if (localStorage.getItem("estilo") == "lightmode") {
         darkMode()
     } else {
