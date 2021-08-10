@@ -498,7 +498,6 @@ function lightMode() {
 
 }
 
-
 function darkMode() {
 
     const body = document.body
@@ -508,6 +507,7 @@ function darkMode() {
     for (const cards of carta) {
         cards.setAttribute("style", "background-color: black")
     }
+
     localStorage.setItem("estilo", "darkmode")
 
 
