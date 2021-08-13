@@ -100,14 +100,19 @@ const mayor = document.getElementById("mayor")
 const menor = document.getElementById("menor")
 const dark = document.getElementById("dark")
 const comprar = document.getElementById("comprar")
+const cuota6 = document.getElementById("6")
+const cuota9 = document.getElementById("9")
+const cuota12 = document.getElementById("12")
+const cuotas = document.getElementById("cuotas")
     // Eventos
 DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 menor.addEventListener(`click`, menorPrecio)
 mayor.addEventListener(`click`, mayorPrecio)
 dark.addEventListener(`click`, cambiarEstilo)
 comprar.addEventListener(`click`, comprarProductos)
-
-
+cuota6.addEventListener(`click`,cuotas6)
+cuota9.addEventListener(`click`,cuotas9)
+cuota12.addEventListener(`click`,cuotas12)
 
 
 
@@ -423,6 +428,13 @@ function borrarItemCarrito(evento) {
     // Calculamos de nuevo el precio
     calcularTotal();
     guardarCarritoEnLocalStorage()
+    cuotas12()
+    cuotas9()
+    cuotas6()
+    if(carrito==0){
+        cuotas.innerHTML=' '
+
+    }
 }
 
 
@@ -470,6 +482,7 @@ function vaciarCarrito() {
     ImprimirCarrito();
     calcularTotal();
     localStorage.removeItem(carrito)
+    cuotas.innerHTML=' '
 }
 
 function comprarProductos() {
@@ -482,13 +495,48 @@ function comprarProductos() {
     }
 }
 
+
+
+
+
+////////////////////////FUNCIONES PARA CUOTAS
+
+
 function cuotas6 (){
     if (total === 0) {
-        return comprarProductos
+        return cuotas6
     } else {
-        total6 = total / 6
-        console.log(total6);
+       total6 = total / 6
+       total6 = parseInt(total6)
     }
+    console.log(total6);
+    cuotas.innerHTML=' '
+    $("#cuotas").append(`<h3>6 cuotas de ${total6} $</h3>`)
+
+}
+function cuotas9 (){
+    if (total === 0) {
+        return cuotas9
+    } else {
+       total9 = total / 9
+       total9 = parseInt(total9)
+    }
+    console.log(total9);
+    cuotas.innerHTML=' '
+    $("#cuotas").append(`<h3>9 cuotas de ${total9} $</h3>`)
+
+}
+function cuotas12 (){
+    if (total === 0) {
+        return cuotas12
+    } else {
+       total12 = total / 12
+       total12 = parseInt(total12)
+    }
+    console.log(total12);
+    cuotas.innerHTML=' '
+    $("#cuotas").append(`<h3>12 cuotas de ${total12} $</h3>`)
+
 }
 
 function guardarCarritoEnLocalStorage() {
@@ -563,7 +611,7 @@ function cambiarEstilo(event) {
             lightMode()
         }
     }
-    localStorage.setItem(key, value)
+    localStorage.setItem(estilo, value)
 }
 
-localStorage.setItem(key, value)
+localStorage.setItem(estilo, value)
