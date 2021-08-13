@@ -48,12 +48,22 @@
         </div>
 
 
-        <footer class="col-sm-auto" id="carritoic">
+        <footer class="carrito col-sm-auto" id="carritoic">
             <h2>Carrito</h2>
+            <div id="carrito">
 
-            <ul id="carrito" class="list-group"></ul>
+            </div>
             <hr>
-
+            <div class="btn-group">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                  Elija la cantidad de cuotas
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                    <li><a class="dropdown-item" id="12">12</a></li>
+                    <li><a class="dropdown-item" id="9">9</a></li>
+                    <li><a class="dropdown-item" id="6">6</a></li>
+                </ul>
+            </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 
                 <p class="total">Total: <span id="total"></span>$</p>

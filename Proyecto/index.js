@@ -371,25 +371,44 @@ function ImprimirCarrito() {
 
 
         // Creamos el nodo del item del carrito
-        const miNodo = document.createElement('li');
-        miNodo.classList.add('list-group-item', 'text-right', 'mx-15');
-
-        miNodo.textContent = `${miItem[0].img} ${numeroUnidadesItem} unidades de ${miItem[0].banda}  ${miItem[0].precio}$`;
-
-
-        // Boton de borrar
+     
+        ////IMAGEN CARRO
+        const miImagenCarro = document.createElement('img');
+        miImagenCarro.classList.add('img-fluid',`img-thumbnail`);
+        miImagenCarro.style.height = '130px'
+        miImagenCarro.style.width = '130px'
+        miImagenCarro.setAttribute('src', miItem[0].img);
+    
+      
+      
+        ////NODO CARRO CON EL TEXTO
+        const miDisco = document.createElement('h2');
+        miDisco.classList.add('text', 'center');
+        miDisco.textContent = ` Cantidad: ${numeroUnidadesItem},   Artista: ${miItem[0].banda},   Precio: ${miItem[0].precio}$`;
+        miDisco.style.marginTop = `10px`
+        // BOTON QUITAR PRODUCTO
         const miBoton = document.createElement('button');
-        miBoton.classList.add('btn', 'btn-danger', `d-grid`, `gap-2`, `d-md-flex`, `justify-content-mx-end`);
+        miBoton.classList.add('btn', 'btn-danger', `d-grid`, `gap-2`);
         miBoton.textContent = 'Quitar producto';
-        miBoton.style.marginLeft = '800px';
+        miBoton.style.marginLeft = '900px';
+        miBoton.style.marginBottom = 'auto';
+       
         miBoton.dataset.item = item;
         miBoton.addEventListener('click', borrarItemCarrito);
         // Mezclamos nodos
-        miNodo.appendChild(miBoton);
-        DOMcarrito.appendChild(miNodo);
-
+        miDisco.appendChild(miImagenCarro)
+       
+        DOMcarrito.appendChild(miDisco);
+       
+        miDisco.appendChild(miBoton);
     });
 }
+
+
+
+
+
+/////FUNCION PARA BORAR ITEM DEL CARRO
 
 
 function borrarItemCarrito(evento) {
@@ -405,9 +424,18 @@ function borrarItemCarrito(evento) {
     calcularTotal();
     guardarCarritoEnLocalStorage()
 }
-///Calcula el precio total 
 
 
+
+
+
+
+
+
+
+
+
+///FUNCION CALCULAR TOTAL DE LA COMPRA
 
 function calcularTotal() {
     // Limpiamos precio anterior
@@ -428,7 +456,12 @@ function calcularTotal() {
 
 
 
-////Funciones para los eventos de vaciar y comprar
+
+
+
+
+
+////    FUNCIONES COMPRAR Y VACIAR CARRO
 
 function vaciarCarrito() {
     // Limpiamos los productos guardados
@@ -449,7 +482,14 @@ function comprarProductos() {
     }
 }
 
-
+function cuotas6 (){
+    if (total === 0) {
+        return comprarProductos
+    } else {
+        total6 = total / 6
+        console.log(total6);
+    }
+}
 
 function guardarCarritoEnLocalStorage() {
     miLocalStorage.setItem('carrito', JSON.stringify(carrito));
@@ -472,10 +512,9 @@ cargarCarritoDeLocalStorage()
 
 
 
-/////Bton dark mode y light mode
+/////   BOTON DARK MODE AND LIGHT MODE
 
 
-lightMode()
 
 
 if (localStorage.getItem("estilo") == "lightmode") {
@@ -494,6 +533,8 @@ function lightMode() {
         cards.setAttribute("style", "background-color: rgb(173, 173, 173)")
     }
 
+
+
     localStorage.setItem("estilo", "lightmode")
 
 }
@@ -508,7 +549,7 @@ function darkMode() {
         cards.setAttribute("style", "background-color: black")
     }
 
-    localStorage.setItem("estilo", "darkmode")
+localStorage.setItem("estilo", "darkmode")
 
 
 }
@@ -522,5 +563,7 @@ function cambiarEstilo(event) {
             lightMode()
         }
     }
-
+    localStorage.setItem(key, value)
 }
+
+localStorage.setItem(key, value)
