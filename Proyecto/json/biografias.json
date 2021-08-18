@@ -1,0 +1,109 @@
+[{
+        "biografia": "Led Zeppelin fue un grupo británico de hard rock fundado en Londres en 1968 por el guitarrista Jimmy Page, quien había pertenecido a The Yardbirds. La banda estuvo integrada por Jimmy Page en la guitarra, John Paul Jones como bajista y tecladista, el vocalista Robert Plant y John Bonham a la batería.",
+        "genero": "rock",
+        "banda": "Led zepellin",
+        "img": "asset/img/led-zep.jpg"
+    },
+    {
+        "biografia": "Miles Dewey Davis III, conocido como Miles Davis, fue un trompetista y compositor estadounidense de jazz. Se trata de una de las figuras más relevantes, innovadoras e influyentes de la historia del jazz, junto con artistas como Louis Armstrong, Duke Ellington, Charlie Parker o John Coltrane",
+        "genero": "jazz",
+        "banda": "Miles Davis",
+        "img": "asset/img/miles-davis.jpg"
+    },
+    {
+        "biografia": "Queens of the Stone Age es una banda estadounidense de stoner rock. y rock alternativo Fue formada en 1997 por Josh Homme, dos años después de la desintegración de Kyuss, su banda anterior, y contó con la participación de sus excompañeros Nick Oliveri y Alfredo Hernández.",
+        "genero": "rock",
+        "banda": "Queen of te stone age",
+        "img": "asset/img/like-clockwork.jpg"
+    },
+    {
+        "biografia": "Stephen Stevie Ray Vaughan fue un guitarrista, cantante, compositor y productor discográfico estadounidense que fusionó los géneros de blues y rock en la década de 1980. Desarrolló un sonido y estilo basado en artistas de blues como B. B. King, Albert King, Freddie King, Buddy Guy y Otis Rush.",
+        "genero": "blues",
+        "banda": "Stevie ray vaughan",
+        "img": "asset/img/srv.jpg"
+    },
+    {
+        "biografia": "Nacido el 23 de septiembre de 1926 en Hamlet, Carolina del norte, Coltrane fue hijo de John R. Coltrane, sastre e intérprete de varios instrumentos, y de Alice (Blair) Coltrane, costurera y sirvienta, aunque con estudios superiores y con capacidad para cantar y tocar el piano. Sus abuelos eran pastores metodistas, motivo por el cual John estuvo desde muy pequeño en contacto con los himnos y música de la iglesia. ",
+        "genero": "jazz",
+        "banda": "Jhon coltrane",
+        "img": "asset/img/coltrane.jpg"
+    },
+    {
+        "biografia": "Riley B. King, hijo de Albert King y Nora Ella Farr, nació el 16 de septiembre de 1925 en una pequeña cabaña de una plantación de algodón situada entre las ciudades de Itta Bena y Berclair, Misisipi.12​ En 1930, su madre se separó de su marido y más tarde se casó con otro hombre. Debido a que su madre no tenía medios para cuidar de su hijo, King pasó mucho tiempo con su abuela materna, Elnora Farr, en Kilmichael.13​ La madre de Riley murió cuando él tenía nueve años.King creció cantando en un coro de gospel en la iglesia baptista Elkhorn de Kilmichael. Con doce años compró su primera guitarra por quince dólares,aunque otra fuente indica que fue un regalo de Bukka White, primo de su madre. En 1943, King abandonó Kilmichael para trabajar como conductor de tractores y comenzó a tocar la guitarra con el Famous St. John's Quartet en Inverness, actuando en iglesias de la zona y en la estación de radio WGRM de Greenwood.16​17​ ",
+        "genero": "blues",
+        "banda": "B.B King",
+        "img": "asset/img/bbking.jpg"
+    },
+    {
+        "biografia": "King Crimson es una banda de rock progresivo fundada en Londres en 1969. Es considerada una de las pioneras y uno de los pilares del género, más allá de su diversificación sonora y mutaciones estilísticas.La banda ha adoptado diversos sonidos durante su historia, producto de la diversa instrumentación utilizada y ha tenido una gran influencia en muchos artistas de la música contemporánea. Además, ha ganado un gran número de seguidores a pesar de tener poca presencia en la radio, televisión u otros medios de comunicación. ",
+        "genero": "rock prog",
+        "banda": "King crimson",
+        "img": "asset/img/King-Crimson-In-the-Court-of-the-Crimson-King.jpg"
+    },
+    {
+        "biografia": "The Rolling Stones es una banda británica de rock originaria de Londres. La banda se formó en abril de 19622 por Brian Jones, Mick Jagger, Keith Richards, Bill Wyman, Charlie Watts e Ian Stewart.2​ Brian Jones fue despedido en junio de 1969, falleciendo tres semanas después, siendo reemplazado por el guitarrista Mick Taylor, que dejaría el grupo en 1975 y sería a su vez reemplazado por Ronnie Wood. Con el retiro de Bill Wyman en 1993 se incluyó al bajista Darryl Jones que, aunque toca con la banda desde la grabación del álbum Voodoo Lounge en 1994, no es un miembro oficial. ",
+        "genero": "rock",
+        "banda": "The rolling stone",
+        "img": "asset/img/rolling-stone.jpg"
+    },
+    {
+        "biografia": "The Mars Volta fue una banda estadounidense de rock progresivo proveniente de El Paso, Texas y fundada en 2001. Fundada por el guitarrista Omar Rodríguez-López y el vocalista Cedric Bixler-Zavala, la banda incorpora varias influencias incluyendo rock progresivo, Krautrock, jazz fusion, hard rock, y música latinoamericana dentro de su música. Fueron llamados La mejor banda prog-rock del 2008 por la revista Rolling Stone",
+        "genero": "rock prog",
+        "banda": "The mars volta",
+        "img": "asset/img/tmv-amp.jpg"
+    },
+    {
+        "biografia": "Su estilo interpretativo y compositivo, formado plenamente en 1947, apenas varió en los 25 años siguientes. Pianista fundador del bebop, tocó también bajo el influjo del hard bop y del jazz modal. Es conocido por su estilo único de improvisación, así como por haber compuesto varios estándares de jazz como Round Midnight, Straight No Chaser, 52nd Street Theme y Blue Monk ",
+        "genero": "jazz",
+        "banda": "Thelonious monk",
+        "img": "asset/img/monk.jpg"
+    },
+    {
+        "biografia": "Arctic Monkeys es una banda británica de rock, formada en Sheffield, Reino Unido. El grupo está compuesto por el guitarrista principal y vocalista Alex Turner, el guitarrista Jamie Cook, el baterista Matt Helders, y con Nick O'Malley en el bajo. El bajista original de la banda, Andy Nicholson, dejó el proyecto en 2006 poco después del lanzamiento del álbum debut. ",
+        "genero": "rock",
+        "banda": "Artick Monkeys",
+        "img": "asset/img/artick-monkeys.jpg"
+    },
+    {
+        "biografia": "James Marshall Hendrix (nacido como Johnny Allen Hendrix; Seattle, Washington; 27 de noviembre de 1942-Notting Hill, Londres, Inglaterra; 18 de septiembre de 1970), más conocido como Jimi Hendrix, fue un guitarrista, cantante y compositor estadounidense. A pesar de que su carrera profesional solo duró cuatro años, es considerado uno de los guitarristas más influyentes de la historia del rock. El Salón de la Fama del Rock and Roll lo describe como Indiscutiblemente uno de los músicos más grandes de la historia del rock",
+        "genero": "rock",
+        "banda": "Jimy Hendrix",
+        "img": "asset/img/hendrix.jpg"
+    },
+    {
+        "biografia": "Carlos Alberto García (Buenos Aires, 23 de octubre de 1951) conocido por su nombre artístico Charly García, es un cantautor, compositor, músico y productor argentino de rock, considerado uno de los compositores más importantes de Latinoamérica y de la historia de la música popular en español.Su obra le valió el reconocimiento en muchas partes de latinoamérica. La revista Billboard lo ha definido como «ícono del rock argentino»,6​ Folha de São Paulo recogió el mote de «Mozart argentino» con que es conocido en América Latina,7​ mientras que la BBC lo describió como pionero del rock en español y leyenda viviente.8​ Es considerado como uno de los máximos referentes del rock argentino.9​10​ ",
+        "genero": "rock nacional",
+        "banda": "Charly Garcia",
+        "img": "asset/img/charly.jpg"
+    },
+    {
+        "biografia": "Yes es una banda inglesa de rock progresivo, formada en 1968 en Londres. Adquirió fama internacional durante la década de 1970 erigiéndose como uno de los pilares del género junto a grupos como Rush, Pink Floyd, Camel, Genesis, Focus, King Crimson y Emerson, Lake & Palmer.Influenciados en sus inicios por grupos como The Beatles, The Who, The Moody Blues o Crosby, Stills, Nash and Young, rápidamente evolucionaron hacia un estilo propio caracterizado por complejas y recargadas armonías, la fusión de elementos del jazz y música clásica,[cita requerida] la creación de melódicas canciones y letras caracterizadas por su contenido enigmático, esotérico, onírico y poético, escritas mayormente por el vocalista, Jon Anderson. ",
+        "genero": "rock prog",
+        "banda": "Yes",
+        "img": "asset/img/yes.jpg"
+    },
+    {
+        "biografia": "The Dave Brubeck Quartet fue un cuarteto de jazz, fundado en 1951 por Dave Brubeck e integrado originalmente por Paul Desmond con el saxo y Brubeck al piano.1​ Comenzaron con una larga serie de presentaciones en el pub Blackhawk, en San Francisco, y adquirieron notoriedad haciendo giras por campus universitarios y lanzando una serie de álbumes con títulos como Jazz at Oberlin, Jazz Goes to College y Jazz Goes to Junior College. ",
+        "genero": "jazz",
+        "banda": "The dave brubeck quartet",
+        "img": "asset/img/takefive.jpg"
+    },
+    {
+        "biografia": "Pescado Rabioso fue un grupo argentino de hard rock y blues rock, liderado por Luis Alberto Spinetta, acompañado inicialmente por el baterista Black Amaya y el bajista Osvaldo Bocón Frascino. El trío se transformó en cuarteto con la incorporación del teclista Carlos Cutaia. Finalmente David Lebón sustituyó a Frascino.A pesar de haber durado poco tiempo (se forma en 1971 y se disuelve en 1973), su estilo y originalidad musical generó una revolución en el rock argentino, dejando en él una huella indeleble . ",
+        "genero": "rock nacional",
+        "banda": "Pescado rabioso",
+        "img": "asset/img/artaud.jpg"
+    },
+    {
+        "biografia": "Invisible fue un supergrupo argentino de rock progresivo y jazz fusión, liderado por Luis Alberto Spinetta, que actuó entre 1973 y 1977. Tuvo una primera etapa como trío (1973-1976), integrado por el propio Spinetta (guitarra y voz), Héctor Pomo Lorenzo (batería) y Carlos Alberto Machi Rufino (bajo), y una segunda etapa como cuarteto (1976-1977), al sumarse Tomás Gubitsch (guitarra). Grabó tres álbumes, dos de los cuales (Invisible y El jardín de los presentes) están incluidos en la lista de los 100 mejores de la historia de rock argentino de la revista Rolling Stone",
+        "genero": "rock nacional",
+        "banda": "Invisible",
+        "img": "asset/img/invisible.jpg"
+    },
+    {
+        "biografia": "Norberto Aníbal Napolitano (Buenos Aires, 10 de marzo de 19503​-Luján, provincia de Buenos Aires; 25 de febrero de 2005), popularmente conocido como Pappo, fue un músico, guitarrista, cantante y compositor argentino de rock. Fue y es una de las figuras más influyentes de la música argentina, y además de ser uno de los precursores del rock argentino. Aparte, fue uno de los primeros en incursionar en el heavy metal en su país y el blues del mismo. ",
+        "genero": "rock nacional",
+        "banda": "Pappo Blues",
+        "img": "asset/img/pappoblues.jpg"
+    }
+]

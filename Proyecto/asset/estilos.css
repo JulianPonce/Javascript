@@ -77,9 +77,11 @@ div h1 {
 }
 
 div h2 {
-    color: burlywood;
-    font-size: 20px;
+    color: rgb(8, 8, 8);
+    font-size: 40px;
     letter-spacing: 2px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
 }
 
 div h3 {

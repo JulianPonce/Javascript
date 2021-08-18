@@ -1,0 +1,27 @@
+div#bio {
+    border-right-width: 20px;
+    border-right-style: solid;
+    border-left-width: 20px;
+    border-left-style: solid;
+    background-color: rgb(163, 163, 163);
+}
+
+div h5 {
+    font-size: 45px;
+    color: rgb(190, 39, 39);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+div p {
+    font-size: 18px;
+    color: azure;
+}
+
+div.row {
+    background-color: rgb(89, 92, 95);
+    border-color: black;
+}
+
+div.card {
+    border-color: rgb(141, 29, 29);
+}
