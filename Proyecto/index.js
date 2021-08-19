@@ -1,10 +1,9 @@
 ///////Generamos nuestros productos con un constructor y pushiamos al array de productos
 class Productos {
-    constructor(id, genero, precio, stock, banda, disponible, año, img, album) {
+    constructor(id, genero, precio, banda, disponible, año, img) {
         this.id = id;
         this.genero = genero;
         this.precio = precio;
-        this.stock = stock;
         this.banda = banda;
         this.disponible = disponible;
         this.año = año;
@@ -17,24 +16,24 @@ class Productos {
 }
 
 
-const pro1 = new Productos(0, "rock", 350, 3, "Led zepellin", true, 1970, `asset/img/led-zep.jpg`);
-const pro2 = new Productos(1, "jazz", 500, 3, "Miles Davis", true, 1953, `asset/img/miles-davis.jpg`);
-const pro3 = new Productos(2, "rock", 300, 2, "Queen of te stone age", true, 2013, `asset/img/like-clockwork.jpg`);
-const pro4 = new Productos(3, "blues", 430, 3, "Stevie ray vaughan", true, 1981, `asset/img/srv.jpg`);
-const pro5 = new Productos(4, "jazz", 600, 5, "Jhon coltrane", true, 1950, `asset/img/coltrane.jpg`);
-const pro6 = new Productos(5, "blues", 500, 5, "B.B King", true, 1959, `asset/img/bbking.jpg`);
-const pro7 = new Productos(6, "rock prog", 390, 2, "King crimson", true, 1970, `asset/img/King-Crimson-In-the-Court-of-the-Crimson-King.jpg`);
-const pro8 = new Productos(7, "rock", 420, 2, "The rolling stone", true, 1971, `asset/img/rolling-stone.jpg`);
-const pro9 = new Productos(8, "rock prog", 320, 1, "The mars volta", true, 2006, `asset/img/tmv-amp.jpg`);
-const pro10 = new Productos(9, "jazz", 480, 2, "Thelonious monk", true, 1949, `asset/img/monk.jpg`);
-const pro11 = new Productos(10, "rock", 380, 2, "Artick Monkeys", true, 2008, `asset/img/artick-monkeys.jpg`);
-const pro12 = new Productos(11, "rock", 380, 2, "Jimy Hendrix", true, 1967, `asset/img/hendrix.jpg`);
-const pro13 = new Productos(12, "rock nacional", 450, 2, "Charly Garcia", true, 2006, `asset/img/charly.jpg`);
-const pro14 = new Productos(13, "rock prog", 540, 1, "Yes", true, 1972, `asset/img/yes.jpg`);
+const pro1 = new Productos(0, "rock", 350, "Led zepellin", true, 1970, `asset/img/led-zep.jpg`);
+const pro2 = new Productos(1, "jazz", 500, "Miles Davis", true, 1953, `asset/img/miles-davis.jpg`);
+const pro3 = new Productos(2, "rock", 300, "Queen of te stone age", true, 2013, `asset/img/like-clockwork.jpg`);
+const pro4 = new Productos(3, "blues", 430, "Stevie ray vaughan", true, 1981, `asset/img/srv.jpg`);
+const pro5 = new Productos(4, "jazz", 600, "Jhon coltrane", true, 1950, `asset/img/coltrane.jpg`);
+const pro6 = new Productos(5, "blues", 500, "B.B King", true, 1959, `asset/img/bbking.jpg`);
+const pro7 = new Productos(6, "rock prog", 390, "King crimson", true, 1970, `asset/img/King-Crimson-In-the-Court-of-the-Crimson-King.jpg`);
+const pro8 = new Productos(7, "rock", 420, "The rolling stone", true, 1971, `asset/img/rolling-stone.jpg`);
+const pro9 = new Productos(8, "rock prog", 320, "The mars volta", true, 2006, `asset/img/tmv-amp.jpg`);
+const pro10 = new Productos(9, "jazz", 480, "Thelonious monk", true, 1949, `asset/img/monk.jpg`);
+const pro11 = new Productos(10, "rock", 380, "Artick Monkeys", true, 2008, `asset/img/artick-monkeys.jpg`);
+const pro12 = new Productos(11, "rock", 380, "Jimy Hendrix", true, 1967, `asset/img/hendrix.jpg`);
+const pro13 = new Productos(12, "rock nacional", 450, "Charly Garcia", true, 2006, `asset/img/charly.jpg`);
+const pro14 = new Productos(13, "rock prog", 540, "Yes", true, 1972, `asset/img/yes.jpg`);
 const pro15 = new Productos(14, "jazz", 400, 2, "The dave brubeck quartet", true, 1954, `asset/img/takefive.jpg`);
-const pro16 = new Productos(15, "rock nacional", 470, 2, "Pescado rabioso", true, 1971, `asset/img/artaud.jpg`);
-const pro17 = new Productos(16, "rock nacional", 380, 2, "Invisible", true, 1974, `asset/img/invisible.jpg`);
-const pro18 = new Productos(17, "rock nacional", 420, 2, "Pappo Blues", true, 1972, `asset/img/pappoblues.jpg`);
+const pro16 = new Productos(15, "rock nacional", 470, "Pescado rabioso", true, 1971, `asset/img/artaud.jpg`);
+const pro17 = new Productos(16, "rock nacional", 380, "Invisible", true, 1974, `asset/img/invisible.jpg`);
+const pro18 = new Productos(17, "rock nacional", 420, "Pappo Blues", true, 1972, `asset/img/pappoblues.jpg`);
 
 const productos = []
 productos.push(pro1)
