@@ -66,7 +66,7 @@ productos.push(pro18)
 
 
 
-///// CREAMOS CONSTANTE Y VARIABLES PARA INTERACTUAR CON EL HTML
+/////  CONSTANTE Y VARIABLES PARA INTERACTUAR CON EL HTML
 
 const items = document.querySelector('#items');
 const HTMLcarrito = document.querySelector('#carrito');
@@ -118,7 +118,7 @@ botonVaciar.addEventListener('click', vaciarCarrito);
 
 function ProductosCards() {
 
-    ////titulos de cards
+    ////titulos de cards con jquery
     $("#tittle").append(`<h1>Tienda online de vinilos</h1>`)
 
 
@@ -379,6 +379,7 @@ function calcularTotal() {
         total = total + miItem[0].precio;
 
     });
+    ////actualizacion de cuotas dependiendo valor total
     cuotas6()
         // Renderizamos el precio en el HTML
     HTMLtotal.textContent = total.toFixed(2);
@@ -404,7 +405,7 @@ function ImprimirCarrito() {
         }, 0);
 
 
-        // Creamos el nodo del item del carrito
+        // Creamos carrito en html a traves del DOM
 
         ////IMAGEN CARRO
         const miImagenCarro = document.createElement('img');
@@ -412,28 +413,23 @@ function ImprimirCarrito() {
         miImagenCarro.style.height = '130px'
         miImagenCarro.style.width = '130px'
         miImagenCarro.setAttribute('src', miItem[0].img);
-
-
-
         ////NODO CARRO CON EL TEXTO
         const miDisco = document.createElement('h2');
         miDisco.classList.add('text', 'center');
         miDisco.textContent = ` Cantidad: ${numeroUnidadesItem},   Artista: ${miItem[0].banda},   Precio: ${miItem[0].precio}$`;
         miDisco.style.marginTop = `10px`
-            // BOTON QUITAR PRODUCTO
+            ////// BOTON QUITAR PRODUCTO
         const miBoton = document.createElement('button');
         miBoton.classList.add('btn', 'btn-danger', `d-grid`, `gap-2`);
         miBoton.textContent = 'Quitar producto';
         miBoton.style.marginLeft = '900px';
         miBoton.style.marginBottom = 'auto';
-
         miBoton.dataset.item = item;
         miBoton.addEventListener('click', borrarItemCarrito);
+
         // Mezclamos nodos
         miDisco.appendChild(miImagenCarro)
-
         HTMLcarrito.appendChild(miDisco);
-
         miDisco.appendChild(miBoton);
     });
 }
@@ -520,7 +516,7 @@ function cuotas6() {
 }
 
 
-
+////Guardamos en localstorage
 function guardarCarritoEnLocalStorage() {
     miLocalStorage.setItem('carrito', JSON.stringify(carrito));
 }
@@ -596,4 +592,6 @@ function cambiarEstilo(event) {
 }
 localStorage.setItem("key", "value")
 
+
+////INCIAMOS PROGRAMA
 ProductosCards()

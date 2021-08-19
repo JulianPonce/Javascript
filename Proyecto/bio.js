@@ -1,6 +1,8 @@
+//////CREAMOS CONST DE LA URL DE NUESTRO ARCHIVO JSON
+
 const URLJSON = "json/biografias.json"
 
-
+/////USAMOS AJAX CON JQUERY PARA MANIPULAR E IMPRIMIR NUESTROS DATOS DEL JSON
 $.getJSON(URLJSON, function(respuesta, estado) {
     if (estado === "success") {
         let misDatos = respuesta;
