@@ -424,8 +424,8 @@ function vaciarCarrito() {
     ImprimirCarrito();
     calcularTotal();
     ////removemos el carrito del localstorage
-    localStorage.removeItem(carrito)
-        /////imprimimos cuotas en blanco
+    localStorage.removeItem("carrito");
+    /////imprimimos cuotas en blanco
     cuotas.innerHTML = ' '
 }
 
@@ -474,7 +474,8 @@ function cargarCarritoDeLocalStorage() {
 }
 
 cargarCarritoDeLocalStorage()
-    /////   BOTON DARK MODE AND LIGHT MODE
+
+/////   BOTON DARK MODE AND LIGHT MODE
 if (localStorage.getItem("estilo") == "lightmode") {
     lightMode()
 } else if (localStorage.getItem("estilo") == "darkmode") {
@@ -528,15 +529,9 @@ localStorage.setItem("key", "value")
 
 
 
-///////funcion para ocultar carro
-
-function ocultarCarro() {
-    if (total = 0) {
-        HTMLcarrito.style.display = disable
-    } else {
-
-    }
-}
 
 ////INCIAMOS PROGRAMA
 ProductosCards()
+ImprimirCarrito()
+cuotas6()
+calcularTotal()
