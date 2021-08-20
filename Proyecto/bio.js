@@ -7,10 +7,11 @@ $.getJSON(URLJSON, function(respuesta, estado) {
     if (estado === "success") {
         let misDatos = respuesta;
         console.log(misDatos);
+        ///////a traves de un for generamos las biografias de los artistas con los datos del json
         for (const dato of misDatos) {
             $("#bio").prepend(`
 
-        <div class="card mb-3" style="max-width: auto;">
+          <div class="card mb-3" style="max-width: auto;">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="${dato.img}" widht ="300px" height ="300px" class=" rounded-start" alt="...">
