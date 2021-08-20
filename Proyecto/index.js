@@ -14,8 +14,6 @@ class Productos {
 
 
 }
-
-
 const pro1 = new Productos(0, "rock", 350, "Led zepellin", true, 1970, `asset/img/led-zep.jpg`);
 const pro2 = new Productos(1, "jazz", 500, "Miles Davis", true, 1953, `asset/img/miles-davis.jpg`);
 const pro3 = new Productos(2, "rock", 300, "Queen of te stone age", true, 2013, `asset/img/like-clockwork.jpg`);
@@ -30,11 +28,11 @@ const pro11 = new Productos(10, "rock", 380, "Artick Monkeys", true, 2008, `asse
 const pro12 = new Productos(11, "rock", 380, "Jimy Hendrix", true, 1967, `asset/img/hendrix.jpg`);
 const pro13 = new Productos(12, "rock nacional", 450, "Charly Garcia", true, 2006, `asset/img/charly.jpg`);
 const pro14 = new Productos(13, "rock prog", 540, "Yes", true, 1972, `asset/img/yes.jpg`);
-const pro15 = new Productos(14, "jazz", 400, 2, "The dave brubeck quartet", true, 1954, `asset/img/takefive.jpg`);
+const pro15 = new Productos(14, "jazz", 400, "The dave brubeck quartet", true, 1954, `asset/img/takefive.jpg`);
 const pro16 = new Productos(15, "rock nacional", 470, "Pescado rabioso", true, 1971, `asset/img/artaud.jpg`);
 const pro17 = new Productos(16, "rock nacional", 380, "Invisible", true, 1974, `asset/img/invisible.jpg`);
 const pro18 = new Productos(17, "rock nacional", 420, "Pappo Blues", true, 1972, `asset/img/pappoblues.jpg`);
-
+////"pushiamos los objetos en el array productos"
 const productos = []
 productos.push(pro1)
 productos.push(pro2)
@@ -56,15 +54,6 @@ productos.push(pro17)
 productos.push(pro18)
 
 
-
-
-
-
-
-
-
-
-
 /////  CONSTANTE Y VARIABLES PARA INTERACTUAR CON EL HTML
 
 const items = document.querySelector('#items');
@@ -81,20 +70,11 @@ const comprar = document.getElementById("comprar")
 const cuota6 = document.getElementById("6")
 const cuotas = document.getElementById("cuotas")
 
-
-
-
 ///// CREAMOS LAS VARIABLES CARRITO Y TOTAL PARA UTILIZAR EN LAS FUNCIONES RESPECTIVAS
 let carrito = [];
 let total = 0;
 
-
-
-
-
 //////// Eventos
-
-
 mayor.addEventListener(`click`, mayorPrecio)
 menor.addEventListener(`click`, menorPrecio)
 dark.addEventListener(`click`, cambiarEstilo)
@@ -107,12 +87,6 @@ botonVaciar.addEventListener('click', vaciarCarrito);
 
 
 /////////////////////FUNCIONES/////////////////////////////////////////////////////
-
-
-
-
-
-
 ///////////////funcion para imprimir productos 
 
 function ProductosCards() {
@@ -120,7 +94,7 @@ function ProductosCards() {
     ////titulos de cards con jquery
     $("#tittle").append(`<h1>Tienda online de vinilos</h1>`)
 
-
+    ////insertamos en html
     productos.forEach((e) => {
         // Estructura
         const miNodo = document.createElement('div');
@@ -179,8 +153,6 @@ function ProductosCards() {
 
 /////Generamos la lista de productos ordenada demayorprecio a menor
 
-
-
 //////funcion para imprimir cards de mayor a menor precio
 function mayorPrecio(event) {
     event.preventDefault()
@@ -196,7 +168,7 @@ function mayorPrecio(event) {
         return 0
 
     });
-
+    ////insertamos en html
     console.log(listamayorprecio);
     items.innerHTML = ` `
     listamayorprecio.forEach((e) => {
@@ -258,8 +230,6 @@ function mayorPrecio(event) {
 
 }
 
-
-
 /////////lista ordenada de menor a mayor precio
 
 function menorPrecio(event) {
@@ -279,7 +249,7 @@ function menorPrecio(event) {
 
     console.log(listamenorprecio);
 
-
+    ////insertamos en html
     items.innerHTML = ` `
     listamenorprecio.forEach((e) => {
         // Estructura
@@ -338,12 +308,6 @@ function menorPrecio(event) {
 
 
 }
-
-
-
-
-
-
 // Evento para añadir un producto al carrito de la compra
 
 function añadirProductoAlCarrito(evento) {
@@ -357,11 +321,6 @@ function añadirProductoAlCarrito(evento) {
 
     console.log(carrito);
 }
-
-
-
-
-
 ///FUNCION CALCULAR TOTAL DE LA COMPRA
 
 function calcularTotal() {
@@ -434,9 +393,6 @@ function ImprimirCarrito() {
 }
 
 
-
-
-
 /////FUNCION PARA BORAR ITEM DEL CARRO
 
 
@@ -459,20 +415,7 @@ function borrarItemCarrito(evento) {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-////    FUNCIONES COMPRAR Y VACIAR CARRO
+/////////FUNCIONES COMPRAR Y VACIAR CARRO
 
 function vaciarCarrito() {
     // Limpiamos los productos guardados
@@ -480,27 +423,29 @@ function vaciarCarrito() {
     // Renderizamos los cambios
     ImprimirCarrito();
     calcularTotal();
+    ////removemos el carrito del localstorage
     localStorage.removeItem(carrito)
+        /////imprimimos cuotas en blanco
     cuotas.innerHTML = ' '
 }
 
+
+/////////funcion para finalizar compra siempre y cuando tengamos algo que comprar
 function comprarProductos() {
     if (total === 0) {
         return comprarProductos
     } else {
+        ////vaciamos el carro y mostramos total en un alert, luego de efectuar la compra
         alert(`Gracias por su compra de un total de ${total} $`)
         vaciarCarrito()
-        console.log(total);
+
     }
 }
 
 
-
-
-
 ////////////////////////FUNCIONES PARA CUOTAS
 
-
+/////siempre y cuando haya un producto en el carro dividimos por 6 el total.
 function cuotas6() {
     if (total === 0) {
         return cuotas6
@@ -529,24 +474,13 @@ function cargarCarritoDeLocalStorage() {
 }
 
 cargarCarritoDeLocalStorage()
-
-
-
-
-
-
-
-/////   BOTON DARK MODE AND LIGHT MODE
-
-
-
-
+    /////   BOTON DARK MODE AND LIGHT MODE
 if (localStorage.getItem("estilo") == "lightmode") {
     lightMode()
 } else if (localStorage.getItem("estilo") == "darkmode") {
     darkMode()
 }
-
+////hacemos la funcion light mode
 function lightMode() {
 
     const body = document.body
@@ -562,7 +496,7 @@ function lightMode() {
     localStorage.setItem("estilo", "lightmode")
 
 }
-
+/////hacemos la funcion dark mode
 function darkMode() {
 
     const body = document.body
@@ -589,8 +523,20 @@ function cambiarEstilo(event) {
     }
     localStorage.setItem("key", "value")
 }
+///////tomamos el valor actual del local para mantener el estilo si se recarga la pagina
 localStorage.setItem("key", "value")
 
+
+
+///////funcion para ocultar carro
+
+function ocultarCarro() {
+    if (total = 0) {
+        HTMLcarrito.style.display = disable
+    } else {
+
+    }
+}
 
 ////INCIAMOS PROGRAMA
 ProductosCards()
